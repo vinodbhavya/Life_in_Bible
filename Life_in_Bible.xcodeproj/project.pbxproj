@@ -15,6 +15,14 @@
 		7A9CDAFB23746294003D4FDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CDAF923746294003D4FDF /* LaunchScreen.storyboard */; };
 		7A9CDB0623746294003D4FDF /* Life_in_BibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CDB0523746294003D4FDF /* Life_in_BibleTests.swift */; };
 		7A9CDB1123746294003D4FDF /* Life_in_BibleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CDB1023746294003D4FDF /* Life_in_BibleUITests.swift */; };
+		A00F8C1E237C4E2E0097C968 /* IDETemplate.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00F8C1D237C4E2E0097C968 /* IDETemplate.plist */; };
+		A00F8C25237DA88E0097C968 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F8C24237DA88E0097C968 /* Books.swift */; };
+		A00F8C27237DA99E0097C968 /* Chapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F8C26237DA99E0097C968 /* Chapters.swift */; };
+		A00F8C29237DA9BD0097C968 /* Verses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F8C28237DA9BD0097C968 /* Verses.swift */; };
+		A00F8C2B237DAA9F0097C968 /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F8C2A237DAA9F0097C968 /* BooksTableViewController.swift */; };
+		A00F8C2D237DAAC10097C968 /* ChaptersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F8C2C237DAAC10097C968 /* ChaptersTableViewController.swift */; };
+		A00F8C2F237DAAD00097C968 /* VersesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F8C2E237DAAD00097C968 /* VersesTableViewController.swift */; };
+		A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		7A9CDB0C23746294003D4FDF /* Life_in_BibleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Life_in_BibleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9CDB1023746294003D4FDF /* Life_in_BibleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_in_BibleUITests.swift; sourceTree = "<group>"; };
 		7A9CDB1223746294003D4FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A00F8C1D237C4E2E0097C968 /* IDETemplate.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = IDETemplate.plist; sourceTree = "<group>"; };
+		A00F8C24237DA88E0097C968 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		A00F8C26237DA99E0097C968 /* Chapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapters.swift; sourceTree = "<group>"; };
+		A00F8C28237DA9BD0097C968 /* Verses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verses.swift; sourceTree = "<group>"; };
+		A00F8C2A237DAA9F0097C968 /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
+		A00F8C2C237DAAC10097C968 /* ChaptersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersTableViewController.swift; sourceTree = "<group>"; };
+		A00F8C2E237DAAD00097C968 /* VersesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersesTableViewController.swift; sourceTree = "<group>"; };
+		A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +95,7 @@
 		7A9CDAE223746292003D4FDF = {
 			isa = PBXGroup;
 			children = (
+				A00F8C1D237C4E2E0097C968 /* IDETemplate.plist */,
 				7A9CDAED23746292003D4FDF /* Life_in_Bible */,
 				7A9CDB0423746294003D4FDF /* Life_in_BibleTests */,
 				7A9CDB0F23746294003D4FDF /* Life_in_BibleUITests */,
@@ -102,6 +119,8 @@
 				7A9CDAEE23746292003D4FDF /* AppDelegate.swift */,
 				7A9CDAF023746292003D4FDF /* SceneDelegate.swift */,
 				7A9CDAF223746292003D4FDF /* ViewController.swift */,
+				A00F8C23237DA8110097C968 /* Model */,
+				A0D62036237B1C6700F67BBB /* Controllers */,
 				7A9CDAF423746292003D4FDF /* Main.storyboard */,
 				7A9CDAF723746294003D4FDF /* Assets.xcassets */,
 				7A9CDAF923746294003D4FDF /* LaunchScreen.storyboard */,
@@ -126,6 +145,27 @@
 				7A9CDB1223746294003D4FDF /* Info.plist */,
 			);
 			path = Life_in_BibleUITests;
+			sourceTree = "<group>";
+		};
+		A00F8C23237DA8110097C968 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A00F8C24237DA88E0097C968 /* Books.swift */,
+				A00F8C26237DA99E0097C968 /* Chapters.swift */,
+				A00F8C28237DA9BD0097C968 /* Verses.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A0D62036237B1C6700F67BBB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A00F8C2A237DAA9F0097C968 /* BooksTableViewController.swift */,
+				A00F8C2C237DAAC10097C968 /* ChaptersTableViewController.swift */,
+				A00F8C2E237DAAD00097C968 /* VersesTableViewController.swift */,
+				A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A9CDAFB23746294003D4FDF /* LaunchScreen.storyboard in Resources */,
+				A00F8C1E237C4E2E0097C968 /* IDETemplate.plist in Resources */,
 				7A9CDAF823746294003D4FDF /* Assets.xcassets in Resources */,
 				7A9CDAF623746292003D4FDF /* Main.storyboard in Resources */,
 			);
@@ -260,8 +301,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A9CDAF323746292003D4FDF /* ViewController.swift in Sources */,
+				A00F8C2F237DAAD00097C968 /* VersesTableViewController.swift in Sources */,
+				A00F8C27237DA99E0097C968 /* Chapters.swift in Sources */,
+				A00F8C29237DA9BD0097C968 /* Verses.swift in Sources */,
 				7A9CDAEF23746292003D4FDF /* AppDelegate.swift in Sources */,
 				7A9CDAF123746292003D4FDF /* SceneDelegate.swift in Sources */,
+				A00F8C2D237DAAC10097C968 /* ChaptersTableViewController.swift in Sources */,
+				A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */,
+				A00F8C2B237DAA9F0097C968 /* BooksTableViewController.swift in Sources */,
+				A00F8C25237DA88E0097C968 /* Books.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
