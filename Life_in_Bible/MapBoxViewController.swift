@@ -2,7 +2,7 @@
 //  MapBoxViewController.swift
 //  Life_in_Bible
 //
-//  Created by rajasekharreddy.talamanchi on 12/11/19.
+//  Created by bhavya on 12/11/19.
 //  Copyright © 2019 Mohammad Saiful Kabir. All rights reserved.
 //
 
@@ -12,6 +12,7 @@ import MapKit
 
 class MapBoxViewController: UIViewController {
 
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 

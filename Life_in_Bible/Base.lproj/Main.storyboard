@@ -15,12 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BSw-OG-5uA">
-                                <rect key="frame" x="20" y="106" width="374" height="640"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BSw-OG-5uA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ExI-jo-Gx1" firstAttribute="bottom" secondItem="BSw-OG-5uA" secondAttribute="bottom" id="KMJ-jk-qDC"/>
+                            <constraint firstItem="BSw-OG-5uA" firstAttribute="top" secondItem="ExI-jo-Gx1" secondAttribute="top" id="Tny-PD-EuS"/>
+                            <constraint firstItem="BSw-OG-5uA" firstAttribute="leading" secondItem="ExI-jo-Gx1" secondAttribute="leading" id="Z4k-QL-LPW"/>
+                            <constraint firstItem="ExI-jo-Gx1" firstAttribute="trailing" secondItem="BSw-OG-5uA" secondAttribute="trailing" id="pr0-RJ-1UR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ExI-jo-Gx1"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="baJ-m3-PEn"/>
@@ -80,6 +85,7 @@
         <!--View Controller-->
         <scene sceneID="30j-VE-q0Z">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aaZ-0j-itb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="IG4-Y1-k0Z" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mJK-EO-qQL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -88,7 +94,6 @@
                         <viewLayoutGuide key="safeArea" id="heW-YW-Nus"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aaZ-0j-itb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3406" y="-554"/>
         </scene>
