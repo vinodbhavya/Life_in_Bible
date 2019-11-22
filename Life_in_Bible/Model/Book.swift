@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 class Book {
     
-    var bookname: String = ""
-    var bookid: String = ""
-    var numberofchapters: Int = 0
+    var bookname: String 
+    var bookid: String
+    var numberofchapters: Int
     
 init(bookname: String, bookid: String, numberofchapters: Int){
     self.bookname = bookname
