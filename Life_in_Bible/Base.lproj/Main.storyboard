@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,42 +38,66 @@
         <!--View Controller-->
         <scene sceneID="gYZ-gS-3NH">
             <objects>
-                <viewController id="FTo-Ky-VDj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="FTo-Ky-VDj" customClass="ViewController" customModule="Life_in_Bible" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o1f-8Q-GH7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5Q2-yu-pXB">
-                                <rect key="frame" x="20" y="112" width="374" height="31"/>
-                                <segments>
-                                    <segment title="Old Testament"/>
-                                    <segment title="New Testament"/>
-                                </segments>
-                                <connections>
-                                    <segue destination="gtQ-sF-d6K" kind="show" id="yxZ-7a-k7e"/>
-                                </connections>
-                            </segmentedControl>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebj-nD-R0u">
-                                <rect key="frame" x="0.0" y="158" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ugy-5W-Pya">
-                                <rect key="frame" x="20" y="224" width="374" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ugy-5W-Pya">
+                                <rect key="frame" x="20" y="116" width="374" height="438"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="438" id="RSw-MS-YFR"/>
+                                    <constraint firstAttribute="width" constant="374" id="d6r-nw-am1"/>
+                                    <constraint firstAttribute="width" secondItem="ugy-5W-Pya" secondAttribute="height" multiplier="187:219" id="k6D-hM-k9z"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UU-R8-Ghg">
+                                <rect key="frame" x="65" y="819" width="100" height="30"/>
+                                <state key="normal" title="Old Testament"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfI-W6-j3x">
+                                <rect key="frame" x="215" y="819" width="107" height="30"/>
+                                <state key="normal" title="New Testament"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6Y-OT-NFg">
+                                <rect key="frame" x="20" y="653" width="374" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Q4d-QV-oqy"/>
+                                </constraints>
+                                <state key="normal" title="New Testament"/>
+                                <connections>
+                                    <segue destination="He7-Ev-OAv" kind="show" identifier="NewTestamentSegue" id="dua-4c-U4K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cve-Hw-hgM">
+                                <rect key="frame" x="20" y="597" width="374" height="30"/>
+                                <state key="normal" title="Old Testament"/>
+                                <connections>
+                                    <segue destination="He7-Ev-OAv" kind="show" identifier="OldTestamentSegue" id="SUr-TO-9R9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="mjH-Ma-HxG" firstAttribute="bottom" secondItem="5Q2-yu-pXB" secondAttribute="bottom" constant="671" id="NQS-cB-dHb"/>
-                            <constraint firstItem="mjH-Ma-HxG" firstAttribute="trailing" secondItem="5Q2-yu-pXB" secondAttribute="trailing" constant="20" id="NwF-fb-fCU"/>
-                            <constraint firstItem="5Q2-yu-pXB" firstAttribute="top" secondItem="mjH-Ma-HxG" secondAttribute="top" constant="24" id="pxz-vA-NDu"/>
-                            <constraint firstItem="5Q2-yu-pXB" firstAttribute="leading" secondItem="mjH-Ma-HxG" secondAttribute="leading" constant="20" id="ut5-7R-uti"/>
+                            <constraint firstItem="ZfI-W6-j3x" firstAttribute="leading" secondItem="9UU-R8-Ghg" secondAttribute="trailing" constant="50" id="0t6-K5-61q"/>
+                            <constraint firstItem="cve-Hw-hgM" firstAttribute="centerX" secondItem="ugy-5W-Pya" secondAttribute="centerX" id="1eO-KL-jbz"/>
+                            <constraint firstItem="9UU-R8-Ghg" firstAttribute="baseline" secondItem="ZfI-W6-j3x" secondAttribute="baseline" id="9OK-v1-IZX"/>
+                            <constraint firstItem="ugy-5W-Pya" firstAttribute="trailing" secondItem="cve-Hw-hgM" secondAttribute="trailing" id="9eR-RY-W21"/>
+                            <constraint firstItem="Y6Y-OT-NFg" firstAttribute="top" secondItem="cve-Hw-hgM" secondAttribute="bottom" constant="26" id="LHq-Og-UDA"/>
+                            <constraint firstItem="ugy-5W-Pya" firstAttribute="leading" secondItem="mjH-Ma-HxG" secondAttribute="leading" constant="20" id="M3G-j8-wAy"/>
+                            <constraint firstItem="Y6Y-OT-NFg" firstAttribute="centerX" secondItem="cve-Hw-hgM" secondAttribute="centerX" id="Okg-8D-0Ah"/>
+                            <constraint firstItem="ugy-5W-Pya" firstAttribute="trailing" secondItem="Y6Y-OT-NFg" secondAttribute="trailing" id="U2R-q5-wEX"/>
+                            <constraint firstItem="9UU-R8-Ghg" firstAttribute="leading" secondItem="o1f-8Q-GH7" secondAttribute="leadingMargin" constant="45" id="Vd2-Qg-erz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="9UU-R8-Ghg" secondAttribute="bottom" constant="-36" id="hxx-0S-ntR"/>
+                            <constraint firstItem="ugy-5W-Pya" firstAttribute="leading" secondItem="cve-Hw-hgM" secondAttribute="leading" id="jBF-TD-kYo"/>
+                            <constraint firstItem="ugy-5W-Pya" firstAttribute="leading" secondItem="Y6Y-OT-NFg" secondAttribute="leading" id="jLb-dV-1g6"/>
+                            <constraint firstItem="cve-Hw-hgM" firstAttribute="top" secondItem="ugy-5W-Pya" secondAttribute="bottom" constant="43" id="oW1-v1-Q9L"/>
+                            <constraint firstItem="mjH-Ma-HxG" firstAttribute="trailing" secondItem="ugy-5W-Pya" secondAttribute="trailing" constant="20" id="ptL-hP-upF"/>
+                            <constraint firstItem="ugy-5W-Pya" firstAttribute="top" secondItem="mjH-Ma-HxG" secondAttribute="top" constant="28" id="vAX-NH-Otg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mjH-Ma-HxG"/>
                     </view>
@@ -82,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="2666.666666666667" y="164.73214285714286"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Books Table View Controller-->
         <scene sceneID="N7l-V0-EfK">
             <objects>
-                <tableViewController id="He7-Ev-OAv" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BooksTableViewController" id="He7-Ev-OAv" customClass="BooksTableViewController" customModule="Life_in_Bible" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dne-tS-b0h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +122,22 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pNe-Ar-WLM" id="P0P-Hh-Oyc">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5Z-fj-Bqg">
+                                            <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="z5Z-fj-Bqg" firstAttribute="top" secondItem="P0P-Hh-Oyc" secondAttribute="top" constant="11" id="V04-yP-HHL"/>
+                                        <constraint firstItem="z5Z-fj-Bqg" firstAttribute="leading" secondItem="P0P-Hh-Oyc" secondAttribute="leading" constant="20" id="w5j-K3-hUp"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="r4B-8P-gcx" kind="show" id="7D0-G3-FyP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -109,36 +149,53 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ik-za-nXj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3407" y="165"/>
+            <point key="canvasLocation" x="3473.913043478261" y="164.73214285714286"/>
         </scene>
-        <!--Books Table View Controller-->
-        <scene sceneID="wL9-Ab-5FP">
+        <!--Chapters Collection View Controller-->
+        <scene sceneID="Ci7-Fw-5GS">
             <objects>
-                <tableViewController storyboardIdentifier="BooksTableViewController" id="gtQ-sF-d6K" customClass="BooksTableViewController" customModule="Life_in_Bible" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cV5-f8-veE">
+                <collectionViewController id="r4B-8P-gcx" customClass="ChaptersCollectionViewController" customModule="Life_in_Bible" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="PKJ-eI-8rh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aLV-7L-xYt">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aLV-7L-xYt" id="Lc8-yo-ciO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VlI-oY-r9i">
+                            <size key="itemSize" width="407" height="757"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChapterCell" id="15m-gk-30i" customClass="ChapterCollectionViewCell" customModule="Life_in_Bible" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Zf-xO-7K2">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="O5S-dz-wud">
+                                            <rect key="frame" x="8" y="9" width="84" height="84"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="customSize" width="100" height="100"/>
+                                <connections>
+                                    <outlet property="imageView" destination="O5S-dz-wud" id="I14-wR-GFH"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
                         <connections>
-                            <outlet property="dataSource" destination="gtQ-sF-d6K" id="fZs-YN-9yb"/>
-                            <outlet property="delegate" destination="gtQ-sF-d6K" id="XRT-va-O4C"/>
+                            <outlet property="dataSource" destination="r4B-8P-gcx" id="WID-CI-KRP"/>
+                            <outlet property="delegate" destination="r4B-8P-gcx" id="9yX-51-djp"/>
                         </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="dFr-pK-IY0"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EvD-PG-eHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="pu7-KM-j9f"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGp-ps-VkZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4120" y="165"/>
+            <point key="canvasLocation" x="4282.608695652174" y="164.73214285714286"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BVf-4D-dIO">
@@ -178,4 +235,10 @@
             <point key="canvasLocation" x="1756.521739130435" y="164.73214285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SUr-TO-9R9"/>
+    </inferredMetricsTieBreakers>
 </document>

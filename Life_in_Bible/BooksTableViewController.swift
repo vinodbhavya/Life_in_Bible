@@ -10,10 +10,15 @@ import UIKit
 import dbt_sdk
 class BooksTableViewController: UITableViewController {
     
+    var books = [Any?]()
+      var dam_id: String?
+     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("cvdfggh")
         getBooks()
+        print(dam_id)
+        
+       
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -27,39 +32,41 @@ class BooksTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return books.count
+        
     }
 
     func getBooks()  {
-           [DBT .getLibraryBook(withDamId: "ENGKJVO1DA", success: {(bookList) in
+           [DBT .getLibraryBook(withDamId: dam_id, success: {(bookList) in
+            
             
             for book in (bookList)! {
-                print((book as! DBTBook).bookName)
+                print((book as! DBTBook).bookName!)
             }
             
             
             // print(bookList)
             
-            
-           }, failure: {(error) in
-            print(error)
+            }, failure: {(error) in
+            print(error!)
            })]
        }
     
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! BooksTableViewController
+        
+        
 
         // Configure the cell...
 
-        return cell
+         
     }
-    */
+  
 
     /*
     // Override to support conditional editing of the table view.
