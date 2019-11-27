@@ -7,14 +7,14 @@
 //
 
 import UIKit
-
+import dbt_sdk
 class BooksTableViewController: UITableViewController {
     
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        //print("cvdfggh")
+        getBooks()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,6 +35,22 @@ class BooksTableViewController: UITableViewController {
         return 0
     }
 
+    func getBooks()  {
+           [DBT .getLibraryBook(withDamId: "ENGKJVO1DA", success: {(bookList) in
+            
+            for book in (bookList)! {
+                print((book as! DBTBook).bookName)
+            }
+            
+            
+            // print(bookList)
+            
+            
+           }, failure: {(error) in
+            print(error)
+           })]
+       }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

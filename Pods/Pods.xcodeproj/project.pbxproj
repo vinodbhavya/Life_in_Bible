@@ -1,0 +1,1094 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02242D49802518E32AAACFAAD05D1F62 /* DBTChapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 469BDF639DF587BE7F9B6428A8497166 /* DBTChapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12680A8BCF5DC8A6B8DB9468FDA1ED8C /* DBTVolumeLanguage.h in Headers */ = {isa = PBXBuildFile; fileRef = 82681060930A5153EA58F47351E6A2A5 /* DBTVolumeLanguage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		153EC7C2382E2392FDB938E480760CF2 /* Pods-Life_in_BibleTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BC5CBB7F623655306B454BD8EE5EE2 /* Pods-Life_in_BibleTests-dummy.m */; };
+		20A5750674F3A21756650CB5168E6BA9 /* Pods-Life_in_Bible-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E07ACC23D938834358F8B3C4E2DAD3 /* Pods-Life_in_Bible-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		234059DDEC27EB1F3B877E707E966D11 /* DBTAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = 421492DCA687065AAB2CD7B6D778ED2C /* DBTAsset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		296863B7A4C6DA7456FBC1034CCFA8C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		2A11FA9367B0FF59D677B08A250CEE3C /* Pods-Life_in_Bible-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62444FBB52F8191EE53AF027A7F3C6E4 /* Pods-Life_in_Bible-dummy.m */; };
+		36024F0F7C9F1193DE4A132C4D85A86A /* DBTBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 857FC444DCA8F30A2BEAC84FD378957E /* DBTBook.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38F189C971EDEC47004D591219E48E53 /* DBT.h in Headers */ = {isa = PBXBuildFile; fileRef = 20A67E4F83C2B212C6BBCAE097F03B15 /* DBT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F237117A0FDECA3970A878AB5104CA8 /* DBTVolume.m in Sources */ = {isa = PBXBuildFile; fileRef = 4637599D93BD16CD350774039E95723D /* DBTVolume.m */; };
+		45003B0DB1166ED6CB3F0A5B8BBF80FD /* DBTBookOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = A8060277B501593CE3376341479F523D /* DBTBookOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49F9FD67E7E9CDEF6654CF92F54FF289 /* DBTMediaLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D58345CBA378965FC458C949B8A5C34 /* DBTMediaLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5141DE9EC1CBBA82B3750BE2E7311CB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		5275B5C55E2475BE3C703187D1F307DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		64320F452A321C558065DF867853F867 /* dbt-sdk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D759FB9FFBCD509A44CC664F4BB264AB /* dbt-sdk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6663893FCDC28D3BE8D549BD5E01BF38 /* Pods-Life_in_BibleTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EDDE30216132B4C3F998130C6D1FB58 /* Pods-Life_in_BibleTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C8FB2C1256AA925821B1B6C2C500EEA /* DBT.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3B8D940610BA077F90F5DF9DB38AF0 /* DBT.m */; };
+		7D71A677DFEB6F49D1298A6B439BA4E2 /* Pods-Life_in_Bible-Life_in_BibleUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7DD09D3FB8690155F11548899C0A83 /* Pods-Life_in_Bible-Life_in_BibleUITests-dummy.m */; };
+		7D9DD2F2D0CA454C2268C0266F78544B /* DBTVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 640FB689CB41B5FE0C26DB69D149425F /* DBTVersion.m */; };
+		8638DEF5446D4091B386C4A9BF1F13F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		9658AB22126E5EE8A971725339ED7E14 /* DBTVerse.h in Headers */ = {isa = PBXBuildFile; fileRef = EED78482F9AA8BBE5774CEF3A527CB78 /* DBTVerse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		965A3B5F5AD30D0924CC106234D8B127 /* DBTWebInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 8271C67679607A747D2A2F64F85DC80F /* DBTWebInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9686333C5120CC02BFD8305C0DADF915 /* Pods-Life_in_Bible-Life_in_BibleUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D75B2FA93289ECC273B4946443ACC1B /* Pods-Life_in_Bible-Life_in_BibleUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		999798C1EDF1D5044FB4174790921650 /* DBTAudioPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F78C9EF66601DE4BC8A893C4FA409E8 /* DBTAudioPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99AD0A030B3FDB76DD4450BFD91349BF /* DBTObject.h in Headers */ = {isa = PBXBuildFile; fileRef = DCB683DD6CE7F64132AB9155325F7060 /* DBTObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DA9EC31001DF7F7053A70EF30B423AD /* DBTConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C37171712A22B7BA7C0266043F3B9A90 /* DBTConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DABED12AD807FB0278CD6FBD1811E96 /* DBTAudioVerseStart.h in Headers */ = {isa = PBXBuildFile; fileRef = E6095BCB193452876EC8EE1AB60ECA05 /* DBTAudioVerseStart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5DAD3E1062BF36397DF04A7C0D230D4 /* DBTObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 874083B5B45499B446203825D922EFC3 /* DBTObject.m */; };
+		A620A094AD0CE2CCAADF581ED1CC36D7 /* DBTVideoPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E1056851F0AB49969564038B315EB66A /* DBTVideoPath.m */; };
+		AA6A33B22E0F45C267595E0C03DA5F96 /* DBTMediaLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F12D1BA72999599D781D780D0946A6A /* DBTMediaLocation.m */; };
+		B2CD6828C58D094D131EA3B264DB771F /* DBTBook.m in Sources */ = {isa = PBXBuildFile; fileRef = A62825624483EEB03ED4EC99F9394BE8 /* DBTBook.m */; };
+		BDBD0E0C30A6C59ACE9E0B7B85196003 /* DBTAudioPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4F4B3ADB5E982CC4850342A495CA0 /* DBTAudioPath.m */; };
+		C1DF3FA9EC3C779058C6124F1ACFC20B /* DBTVolumeOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A35A455078FF55188D9BFB89813FF0 /* DBTVolumeOrganization.m */; };
+		C5732787565A48EF929C0501C0795670 /* DBTVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 812B0E440DCEAC0B8509BCAF069DF3F9 /* DBTVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDE852608F39880CF428D3EACED688AE /* DBTWebInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C89B9691ED1DCA994AE7518910394D7 /* DBTWebInterface.m */; };
+		D1372D736BDC32D1B75916183F4C0478 /* DBTAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = A34E6B096D9CB2F4697B3536CCDB9C8C /* DBTAsset.m */; };
+		D8475E70A991FB495163F9026776333C /* DBTBookOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE166108B49B15851D2250C440608E4 /* DBTBookOrder.m */; };
+		E30FCCA912BC019353A9886232EF5976 /* DBTVolumeLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C221A4910FE48D19CB3D8A37B5328DF /* DBTVolumeLanguage.m */; };
+		E643F4715FE8F0253C58B4FF55886EA4 /* DBTVerse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F82E7B2AABC1CCF4CA2EB264A34 /* DBTVerse.m */; };
+		E75CB2AF173CA2DE20C80BD7F4B2F04F /* dbt-sdk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7BFB3DC7B63B1DA26126337CAA3F82 /* dbt-sdk-dummy.m */; };
+		E899D86C33036BD131FB172431084C7F /* DBTVolumeOrganization.h in Headers */ = {isa = PBXBuildFile; fileRef = ADEF46EE641C04D03CB31DECB05D8B4D /* DBTVolumeOrganization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9D9F12CD66F5F39B0609C51678620DF /* DBTVideoPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 569ABF9D0D3D617FA1EB6AC3E2616CFC /* DBTVideoPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED51E80756B83DE8FD6465439D01E487 /* DBTAudioVerseStart.m in Sources */ = {isa = PBXBuildFile; fileRef = AE05A2C47C79809F7A6A38C9B3A96A60 /* DBTAudioVerseStart.m */; };
+		FAB2F4FED7F2069863C5A0C4B4ECA0C7 /* DBTChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE547518735C0E20CFF524FDE3E3352 /* DBTChapter.m */; };
+		FABDE6F0F86AAC439DE0A4FE9CDAD7E9 /* DBTVolume.h in Headers */ = {isa = PBXBuildFile; fileRef = F7D7DC8B0E72F10C53A89458F1CF7291 /* DBTVolume.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5307054507FDED9238200A5ADB92B40F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7803648EC960787015B404D6193FF3B;
+			remoteInfo = "Pods-Life_in_Bible";
+		};
+		85F9AB7A4B06F4E341DEAACAACB122FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F05D28A9DAD160AD492E8F966590176B;
+			remoteInfo = "dbt-sdk";
+		};
+		B5FDE2A7E814A299D507A960E022504C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F05D28A9DAD160AD492E8F966590176B;
+			remoteInfo = "dbt-sdk";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02E07ACC23D938834358F8B3C4E2DAD3 /* Pods-Life_in_Bible-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Life_in_Bible-umbrella.h"; sourceTree = "<group>"; };
+		13A35A455078FF55188D9BFB89813FF0 /* DBTVolumeOrganization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTVolumeOrganization.m; path = Pod/Classes/DBTVolumeOrganization.m; sourceTree = "<group>"; };
+		20A67E4F83C2B212C6BBCAE097F03B15 /* DBT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBT.h; path = Pod/Classes/DBT.h; sourceTree = "<group>"; };
+		2C89B9691ED1DCA994AE7518910394D7 /* DBTWebInterface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTWebInterface.m; path = Pod/Classes/DBTWebInterface.m; sourceTree = "<group>"; };
+		2D58345CBA378965FC458C949B8A5C34 /* DBTMediaLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTMediaLocation.h; path = Pod/Classes/DBTMediaLocation.h; sourceTree = "<group>"; };
+		2F7BFB3DC7B63B1DA26126337CAA3F82 /* dbt-sdk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "dbt-sdk-dummy.m"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3A3B8D940610BA077F90F5DF9DB38AF0 /* DBT.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBT.m; path = Pod/Classes/DBT.m; sourceTree = "<group>"; };
+		3A8C0F82E7B2AABC1CCF4CA2EB264A34 /* DBTVerse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTVerse.m; path = Pod/Classes/DBTVerse.m; sourceTree = "<group>"; };
+		3BE166108B49B15851D2250C440608E4 /* DBTBookOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTBookOrder.m; path = Pod/Classes/DBTBookOrder.m; sourceTree = "<group>"; };
+		421492DCA687065AAB2CD7B6D778ED2C /* DBTAsset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTAsset.h; path = Pod/Classes/DBTAsset.h; sourceTree = "<group>"; };
+		4637599D93BD16CD350774039E95723D /* DBTVolume.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTVolume.m; path = Pod/Classes/DBTVolume.m; sourceTree = "<group>"; };
+		469BDF639DF587BE7F9B6428A8497166 /* DBTChapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTChapter.h; path = Pod/Classes/DBTChapter.h; sourceTree = "<group>"; };
+		47B275CE77429FE9F22FF9094B66E56C /* dbt_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = dbt_sdk.framework; path = "dbt-sdk.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AB8B65FD3E69A39D5314D20F904FBCE /* Pods_Life_in_Bible_Life_in_BibleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Life_in_Bible_Life_in_BibleUITests.framework; path = "Pods-Life_in_Bible-Life_in_BibleUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DA4716145F8C367DBBF1F733B3DDDE9 /* Pods-Life_in_Bible-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Life_in_Bible-acknowledgements.plist"; sourceTree = "<group>"; };
+		569ABF9D0D3D617FA1EB6AC3E2616CFC /* DBTVideoPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTVideoPath.h; path = Pod/Classes/DBTVideoPath.h; sourceTree = "<group>"; };
+		57F44182BE0BC4EFC5195D6803A47A67 /* Pods-Life_in_Bible-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Life_in_Bible-frameworks.sh"; sourceTree = "<group>"; };
+		5FFEDA5D8EE2A954A323C8E7DF0AD5FF /* Pods-Life_in_BibleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Life_in_BibleTests.release.xcconfig"; sourceTree = "<group>"; };
+		62444FBB52F8191EE53AF027A7F3C6E4 /* Pods-Life_in_Bible-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Life_in_Bible-dummy.m"; sourceTree = "<group>"; };
+		640FB689CB41B5FE0C26DB69D149425F /* DBTVersion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTVersion.m; path = Pod/Classes/DBTVersion.m; sourceTree = "<group>"; };
+		6C221A4910FE48D19CB3D8A37B5328DF /* DBTVolumeLanguage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTVolumeLanguage.m; path = Pod/Classes/DBTVolumeLanguage.m; sourceTree = "<group>"; };
+		6F12D1BA72999599D781D780D0946A6A /* DBTMediaLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTMediaLocation.m; path = Pod/Classes/DBTMediaLocation.m; sourceTree = "<group>"; };
+		74D20C767FCDFBC5838501980B80E3BA /* dbt-sdk-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "dbt-sdk-Info.plist"; sourceTree = "<group>"; };
+		7F78C9EF66601DE4BC8A893C4FA409E8 /* DBTAudioPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTAudioPath.h; path = Pod/Classes/DBTAudioPath.h; sourceTree = "<group>"; };
+		812B0E440DCEAC0B8509BCAF069DF3F9 /* DBTVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTVersion.h; path = Pod/Classes/DBTVersion.h; sourceTree = "<group>"; };
+		82681060930A5153EA58F47351E6A2A5 /* DBTVolumeLanguage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTVolumeLanguage.h; path = Pod/Classes/DBTVolumeLanguage.h; sourceTree = "<group>"; };
+		8271C67679607A747D2A2F64F85DC80F /* DBTWebInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTWebInterface.h; path = Pod/Classes/DBTWebInterface.h; sourceTree = "<group>"; };
+		857FC444DCA8F30A2BEAC84FD378957E /* DBTBook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTBook.h; path = Pod/Classes/DBTBook.h; sourceTree = "<group>"; };
+		874083B5B45499B446203825D922EFC3 /* DBTObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTObject.m; path = Pod/Classes/DBTObject.m; sourceTree = "<group>"; };
+		8777389A89A7537200B11460B6597975 /* Pods-Life_in_Bible-Life_in_BibleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Life_in_Bible-Life_in_BibleUITests.modulemap"; sourceTree = "<group>"; };
+		87AB41F3353E7650B274FBB994FD27C2 /* Pods-Life_in_Bible-Life_in_BibleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Life_in_Bible-Life_in_BibleUITests-frameworks.sh"; sourceTree = "<group>"; };
+		8D75B2FA93289ECC273B4946443ACC1B /* Pods-Life_in_Bible-Life_in_BibleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Life_in_Bible-Life_in_BibleUITests-umbrella.h"; sourceTree = "<group>"; };
+		8EDDE30216132B4C3F998130C6D1FB58 /* Pods-Life_in_BibleTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Life_in_BibleTests-umbrella.h"; sourceTree = "<group>"; };
+		90F56403910F8A52CA82BCCA2231FFDC /* Pods-Life_in_Bible-Life_in_BibleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Life_in_Bible-Life_in_BibleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		934E8543732E3972AA4C0681261CC021 /* Pods_Life_in_BibleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Life_in_BibleTests.framework; path = "Pods-Life_in_BibleTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		946B5915DAAAAFBFBCAD4A49580CC223 /* Pods-Life_in_Bible-Life_in_BibleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Life_in_Bible-Life_in_BibleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		99BC5CBB7F623655306B454BD8EE5EE2 /* Pods-Life_in_BibleTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Life_in_BibleTests-dummy.m"; sourceTree = "<group>"; };
+		9AE547518735C0E20CFF524FDE3E3352 /* DBTChapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTChapter.m; path = Pod/Classes/DBTChapter.m; sourceTree = "<group>"; };
+		9BD4F4B3ADB5E982CC4850342A495CA0 /* DBTAudioPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTAudioPath.m; path = Pod/Classes/DBTAudioPath.m; sourceTree = "<group>"; };
+		9D7DD09D3FB8690155F11548899C0A83 /* Pods-Life_in_Bible-Life_in_BibleUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Life_in_Bible-Life_in_BibleUITests-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A34E6B096D9CB2F4697B3536CCDB9C8C /* DBTAsset.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTAsset.m; path = Pod/Classes/DBTAsset.m; sourceTree = "<group>"; };
+		A62825624483EEB03ED4EC99F9394BE8 /* DBTBook.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTBook.m; path = Pod/Classes/DBTBook.m; sourceTree = "<group>"; };
+		A8060277B501593CE3376341479F523D /* DBTBookOrder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTBookOrder.h; path = Pod/Classes/DBTBookOrder.h; sourceTree = "<group>"; };
+		ADEF46EE641C04D03CB31DECB05D8B4D /* DBTVolumeOrganization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTVolumeOrganization.h; path = Pod/Classes/DBTVolumeOrganization.h; sourceTree = "<group>"; };
+		AE05A2C47C79809F7A6A38C9B3A96A60 /* DBTAudioVerseStart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTAudioVerseStart.m; path = Pod/Classes/DBTAudioVerseStart.m; sourceTree = "<group>"; };
+		AE6ADE0F04BCC1557AC2EC65630076DF /* dbt-sdk-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dbt-sdk-prefix.pch"; sourceTree = "<group>"; };
+		B5E12CB46AAC8821B729D8E148EBD03B /* Pods-Life_in_Bible-Life_in_BibleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Life_in_Bible-Life_in_BibleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BA5BEEA3A89AC2CAC1FB27CB729F41EE /* Pods-Life_in_Bible-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Life_in_Bible-Info.plist"; sourceTree = "<group>"; };
+		BE69B348DA50554655A6A315AC30440A /* Pods-Life_in_BibleTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Life_in_BibleTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C37171712A22B7BA7C0266043F3B9A90 /* DBTConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTConstants.h; path = Pod/Classes/DBTConstants.h; sourceTree = "<group>"; };
+		C7096B595502C8F23A8CA1F66149575E /* dbt-sdk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "dbt-sdk.modulemap"; sourceTree = "<group>"; };
+		CD520E88E772F78EF1B4ADA4180F3B6B /* Pods-Life_in_Bible-Life_in_BibleUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Life_in_Bible-Life_in_BibleUITests-Info.plist"; sourceTree = "<group>"; };
+		CD88F69EA462BDD6C35025B275662ACD /* Pods-Life_in_Bible-Life_in_BibleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Life_in_Bible-Life_in_BibleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE6AA5A4256783B2FE0826E6239492E0 /* Pods-Life_in_Bible.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Life_in_Bible.debug.xcconfig"; sourceTree = "<group>"; };
+		CFAE9DF6CBE5D06D7E13B1F109E261CC /* Pods-Life_in_Bible.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Life_in_Bible.modulemap"; sourceTree = "<group>"; };
+		D759FB9FFBCD509A44CC664F4BB264AB /* dbt-sdk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dbt-sdk-umbrella.h"; sourceTree = "<group>"; };
+		DCB683DD6CE7F64132AB9155325F7060 /* DBTObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTObject.h; path = Pod/Classes/DBTObject.h; sourceTree = "<group>"; };
+		E0276F138EA2760AD8C2CA17F34FF6D3 /* dbt-sdk.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "dbt-sdk.xcconfig"; sourceTree = "<group>"; };
+		E1056851F0AB49969564038B315EB66A /* DBTVideoPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DBTVideoPath.m; path = Pod/Classes/DBTVideoPath.m; sourceTree = "<group>"; };
+		E52E45247F758D9FDBDB39B77563497C /* Pods_Life_in_Bible.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Life_in_Bible.framework; path = "Pods-Life_in_Bible.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6095BCB193452876EC8EE1AB60ECA05 /* DBTAudioVerseStart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTAudioVerseStart.h; path = Pod/Classes/DBTAudioVerseStart.h; sourceTree = "<group>"; };
+		E87AB19D5ECBEFA0A010563636FF8EB6 /* Pods-Life_in_Bible.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Life_in_Bible.release.xcconfig"; sourceTree = "<group>"; };
+		EC54313838E5195ADC457D9F52C29978 /* Pods-Life_in_BibleTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Life_in_BibleTests-Info.plist"; sourceTree = "<group>"; };
+		ECA58876C8C95573B874AA3DBC7E6DD4 /* Pods-Life_in_Bible-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Life_in_Bible-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EED78482F9AA8BBE5774CEF3A527CB78 /* DBTVerse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTVerse.h; path = Pod/Classes/DBTVerse.h; sourceTree = "<group>"; };
+		F766379AF0D9511E7ECF6DB84C16734F /* Pods-Life_in_BibleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Life_in_BibleTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F771FD3190DAB7C123D5E7B23D546069 /* Pods-Life_in_BibleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Life_in_BibleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F7D7DC8B0E72F10C53A89458F1CF7291 /* DBTVolume.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBTVolume.h; path = Pod/Classes/DBTVolume.h; sourceTree = "<group>"; };
+		FAF5F6F24CC070C2775E62FDB80C6925 /* Pods-Life_in_BibleTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Life_in_BibleTests.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40EF1CB8DBA82F31186019DCA0B33BA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5275B5C55E2475BE3C703187D1F307DF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43F4CF1F4853C5402D7C28E3EEF4FAD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8638DEF5446D4091B386C4A9BF1F13F2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E9C9B65A83EF09CBF3640ECBD05D4A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5141DE9EC1CBBA82B3750BE2E7311CB6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5C4CEA053636C223C7964B682B731E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				296863B7A4C6DA7456FBC1034CCFA8C1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A128053A17F853231F0A63656C2CD5B /* Pods-Life_in_Bible */ = {
+			isa = PBXGroup;
+			children = (
+				CFAE9DF6CBE5D06D7E13B1F109E261CC /* Pods-Life_in_Bible.modulemap */,
+				ECA58876C8C95573B874AA3DBC7E6DD4 /* Pods-Life_in_Bible-acknowledgements.markdown */,
+				4DA4716145F8C367DBBF1F733B3DDDE9 /* Pods-Life_in_Bible-acknowledgements.plist */,
+				62444FBB52F8191EE53AF027A7F3C6E4 /* Pods-Life_in_Bible-dummy.m */,
+				57F44182BE0BC4EFC5195D6803A47A67 /* Pods-Life_in_Bible-frameworks.sh */,
+				BA5BEEA3A89AC2CAC1FB27CB729F41EE /* Pods-Life_in_Bible-Info.plist */,
+				02E07ACC23D938834358F8B3C4E2DAD3 /* Pods-Life_in_Bible-umbrella.h */,
+				CE6AA5A4256783B2FE0826E6239492E0 /* Pods-Life_in_Bible.debug.xcconfig */,
+				E87AB19D5ECBEFA0A010563636FF8EB6 /* Pods-Life_in_Bible.release.xcconfig */,
+			);
+			name = "Pods-Life_in_Bible";
+			path = "Target Support Files/Pods-Life_in_Bible";
+			sourceTree = "<group>";
+		};
+		2667A4B725DDCFD1BDDE6F90C502CDFC /* Pods-Life_in_BibleTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5F6F24CC070C2775E62FDB80C6925 /* Pods-Life_in_BibleTests.modulemap */,
+				BE69B348DA50554655A6A315AC30440A /* Pods-Life_in_BibleTests-acknowledgements.markdown */,
+				F766379AF0D9511E7ECF6DB84C16734F /* Pods-Life_in_BibleTests-acknowledgements.plist */,
+				99BC5CBB7F623655306B454BD8EE5EE2 /* Pods-Life_in_BibleTests-dummy.m */,
+				EC54313838E5195ADC457D9F52C29978 /* Pods-Life_in_BibleTests-Info.plist */,
+				8EDDE30216132B4C3F998130C6D1FB58 /* Pods-Life_in_BibleTests-umbrella.h */,
+				F771FD3190DAB7C123D5E7B23D546069 /* Pods-Life_in_BibleTests.debug.xcconfig */,
+				5FFEDA5D8EE2A954A323C8E7DF0AD5FF /* Pods-Life_in_BibleTests.release.xcconfig */,
+			);
+			name = "Pods-Life_in_BibleTests";
+			path = "Target Support Files/Pods-Life_in_BibleTests";
+			sourceTree = "<group>";
+		};
+		6D82E7E89268F41C2012DC21212EB750 /* dbt-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				20A67E4F83C2B212C6BBCAE097F03B15 /* DBT.h */,
+				3A3B8D940610BA077F90F5DF9DB38AF0 /* DBT.m */,
+				421492DCA687065AAB2CD7B6D778ED2C /* DBTAsset.h */,
+				A34E6B096D9CB2F4697B3536CCDB9C8C /* DBTAsset.m */,
+				7F78C9EF66601DE4BC8A893C4FA409E8 /* DBTAudioPath.h */,
+				9BD4F4B3ADB5E982CC4850342A495CA0 /* DBTAudioPath.m */,
+				E6095BCB193452876EC8EE1AB60ECA05 /* DBTAudioVerseStart.h */,
+				AE05A2C47C79809F7A6A38C9B3A96A60 /* DBTAudioVerseStart.m */,
+				857FC444DCA8F30A2BEAC84FD378957E /* DBTBook.h */,
+				A62825624483EEB03ED4EC99F9394BE8 /* DBTBook.m */,
+				A8060277B501593CE3376341479F523D /* DBTBookOrder.h */,
+				3BE166108B49B15851D2250C440608E4 /* DBTBookOrder.m */,
+				469BDF639DF587BE7F9B6428A8497166 /* DBTChapter.h */,
+				9AE547518735C0E20CFF524FDE3E3352 /* DBTChapter.m */,
+				C37171712A22B7BA7C0266043F3B9A90 /* DBTConstants.h */,
+				2D58345CBA378965FC458C949B8A5C34 /* DBTMediaLocation.h */,
+				6F12D1BA72999599D781D780D0946A6A /* DBTMediaLocation.m */,
+				DCB683DD6CE7F64132AB9155325F7060 /* DBTObject.h */,
+				874083B5B45499B446203825D922EFC3 /* DBTObject.m */,
+				EED78482F9AA8BBE5774CEF3A527CB78 /* DBTVerse.h */,
+				3A8C0F82E7B2AABC1CCF4CA2EB264A34 /* DBTVerse.m */,
+				812B0E440DCEAC0B8509BCAF069DF3F9 /* DBTVersion.h */,
+				640FB689CB41B5FE0C26DB69D149425F /* DBTVersion.m */,
+				569ABF9D0D3D617FA1EB6AC3E2616CFC /* DBTVideoPath.h */,
+				E1056851F0AB49969564038B315EB66A /* DBTVideoPath.m */,
+				F7D7DC8B0E72F10C53A89458F1CF7291 /* DBTVolume.h */,
+				4637599D93BD16CD350774039E95723D /* DBTVolume.m */,
+				82681060930A5153EA58F47351E6A2A5 /* DBTVolumeLanguage.h */,
+				6C221A4910FE48D19CB3D8A37B5328DF /* DBTVolumeLanguage.m */,
+				ADEF46EE641C04D03CB31DECB05D8B4D /* DBTVolumeOrganization.h */,
+				13A35A455078FF55188D9BFB89813FF0 /* DBTVolumeOrganization.m */,
+				8271C67679607A747D2A2F64F85DC80F /* DBTWebInterface.h */,
+				2C89B9691ED1DCA994AE7518910394D7 /* DBTWebInterface.m */,
+				B6A01371D44E1F9597D411CCBD653F60 /* Support Files */,
+			);
+			name = "dbt-sdk";
+			path = "dbt-sdk";
+			sourceTree = "<group>";
+		};
+		8112E46643010A2BB67DB73569EF7B07 /* Pods-Life_in_Bible-Life_in_BibleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8777389A89A7537200B11460B6597975 /* Pods-Life_in_Bible-Life_in_BibleUITests.modulemap */,
+				B5E12CB46AAC8821B729D8E148EBD03B /* Pods-Life_in_Bible-Life_in_BibleUITests-acknowledgements.markdown */,
+				90F56403910F8A52CA82BCCA2231FFDC /* Pods-Life_in_Bible-Life_in_BibleUITests-acknowledgements.plist */,
+				9D7DD09D3FB8690155F11548899C0A83 /* Pods-Life_in_Bible-Life_in_BibleUITests-dummy.m */,
+				87AB41F3353E7650B274FBB994FD27C2 /* Pods-Life_in_Bible-Life_in_BibleUITests-frameworks.sh */,
+				CD520E88E772F78EF1B4ADA4180F3B6B /* Pods-Life_in_Bible-Life_in_BibleUITests-Info.plist */,
+				8D75B2FA93289ECC273B4946443ACC1B /* Pods-Life_in_Bible-Life_in_BibleUITests-umbrella.h */,
+				CD88F69EA462BDD6C35025B275662ACD /* Pods-Life_in_Bible-Life_in_BibleUITests.debug.xcconfig */,
+				946B5915DAAAAFBFBCAD4A49580CC223 /* Pods-Life_in_Bible-Life_in_BibleUITests.release.xcconfig */,
+			);
+			name = "Pods-Life_in_Bible-Life_in_BibleUITests";
+			path = "Target Support Files/Pods-Life_in_Bible-Life_in_BibleUITests";
+			sourceTree = "<group>";
+		};
+		8B800F21102FCA5B218EA6E4F098376F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A128053A17F853231F0A63656C2CD5B /* Pods-Life_in_Bible */,
+				8112E46643010A2BB67DB73569EF7B07 /* Pods-Life_in_Bible-Life_in_BibleUITests */,
+				2667A4B725DDCFD1BDDE6F90C502CDFC /* Pods-Life_in_BibleTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B6A01371D44E1F9597D411CCBD653F60 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7096B595502C8F23A8CA1F66149575E /* dbt-sdk.modulemap */,
+				E0276F138EA2760AD8C2CA17F34FF6D3 /* dbt-sdk.xcconfig */,
+				2F7BFB3DC7B63B1DA26126337CAA3F82 /* dbt-sdk-dummy.m */,
+				74D20C767FCDFBC5838501980B80E3BA /* dbt-sdk-Info.plist */,
+				AE6ADE0F04BCC1557AC2EC65630076DF /* dbt-sdk-prefix.pch */,
+				D759FB9FFBCD509A44CC664F4BB264AB /* dbt-sdk-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/dbt-sdk";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CA67ABB5086B8C8441AD69CEB57663D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47B275CE77429FE9F22FF9094B66E56C /* dbt_sdk.framework */,
+				E52E45247F758D9FDBDB39B77563497C /* Pods_Life_in_Bible.framework */,
+				4AB8B65FD3E69A39D5314D20F904FBCE /* Pods_Life_in_Bible_Life_in_BibleUITests.framework */,
+				934E8543732E3972AA4C0681261CC021 /* Pods_Life_in_BibleTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				F46821B7180902B9B9E514223461684A /* Pods */,
+				CA67ABB5086B8C8441AD69CEB57663D7 /* Products */,
+				8B800F21102FCA5B218EA6E4F098376F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F46821B7180902B9B9E514223461684A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D82E7E89268F41C2012DC21212EB750 /* dbt-sdk */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5BF0D6F6F4C3D810B70A75422D305119 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64320F452A321C558065DF867853F867 /* dbt-sdk-umbrella.h in Headers */,
+				38F189C971EDEC47004D591219E48E53 /* DBT.h in Headers */,
+				234059DDEC27EB1F3B877E707E966D11 /* DBTAsset.h in Headers */,
+				999798C1EDF1D5044FB4174790921650 /* DBTAudioPath.h in Headers */,
+				9DABED12AD807FB0278CD6FBD1811E96 /* DBTAudioVerseStart.h in Headers */,
+				36024F0F7C9F1193DE4A132C4D85A86A /* DBTBook.h in Headers */,
+				45003B0DB1166ED6CB3F0A5B8BBF80FD /* DBTBookOrder.h in Headers */,
+				02242D49802518E32AAACFAAD05D1F62 /* DBTChapter.h in Headers */,
+				9DA9EC31001DF7F7053A70EF30B423AD /* DBTConstants.h in Headers */,
+				49F9FD67E7E9CDEF6654CF92F54FF289 /* DBTMediaLocation.h in Headers */,
+				99AD0A030B3FDB76DD4450BFD91349BF /* DBTObject.h in Headers */,
+				9658AB22126E5EE8A971725339ED7E14 /* DBTVerse.h in Headers */,
+				C5732787565A48EF929C0501C0795670 /* DBTVersion.h in Headers */,
+				E9D9F12CD66F5F39B0609C51678620DF /* DBTVideoPath.h in Headers */,
+				FABDE6F0F86AAC439DE0A4FE9CDAD7E9 /* DBTVolume.h in Headers */,
+				12680A8BCF5DC8A6B8DB9468FDA1ED8C /* DBTVolumeLanguage.h in Headers */,
+				E899D86C33036BD131FB172431084C7F /* DBTVolumeOrganization.h in Headers */,
+				965A3B5F5AD30D0924CC106234D8B127 /* DBTWebInterface.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EE247B5B97B7F0568D303CC82D26DE7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6663893FCDC28D3BE8D549BD5E01BF38 /* Pods-Life_in_BibleTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0780490B79E4C222360E79AE6D43D02 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9686333C5120CC02BFD8305C0DADF915 /* Pods-Life_in_Bible-Life_in_BibleUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBC2559A89046D057634BA4A05006551 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A5750674F3A21756650CB5168E6BA9 /* Pods-Life_in_Bible-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		57246D5B4433FB25AE1B69FB726D8467 /* Pods-Life_in_BibleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8107D5BE460B4BA220FD8D469DC69C0 /* Build configuration list for PBXNativeTarget "Pods-Life_in_BibleTests" */;
+			buildPhases = (
+				9EE247B5B97B7F0568D303CC82D26DE7 /* Headers */,
+				A8AE93512B6E87C53A3C9ACF503E42AE /* Sources */,
+				40EF1CB8DBA82F31186019DCA0B33BA2 /* Frameworks */,
+				DD57581940D03BAA3525FA115CD62937 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4505623E5F677BE41F5ECBD1E253F6EA /* PBXTargetDependency */,
+			);
+			name = "Pods-Life_in_BibleTests";
+			productName = "Pods-Life_in_BibleTests";
+			productReference = 934E8543732E3972AA4C0681261CC021 /* Pods_Life_in_BibleTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D7803648EC960787015B404D6193FF3B /* Pods-Life_in_Bible */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B82ADA7B92E8BBD9CE87075CEB1559D7 /* Build configuration list for PBXNativeTarget "Pods-Life_in_Bible" */;
+			buildPhases = (
+				CBC2559A89046D057634BA4A05006551 /* Headers */,
+				ACD6B8C07C9F46B267BBC3F4D91E4650 /* Sources */,
+				E5C4CEA053636C223C7964B682B731E7 /* Frameworks */,
+				9D608F13D4F275298FD794CFF62FC160 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6D4E32C3168469CF1F390E05375231B /* PBXTargetDependency */,
+			);
+			name = "Pods-Life_in_Bible";
+			productName = "Pods-Life_in_Bible";
+			productReference = E52E45247F758D9FDBDB39B77563497C /* Pods_Life_in_Bible.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F05D28A9DAD160AD492E8F966590176B /* dbt-sdk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 051B65EFB7793E5C6470B90BD7482899 /* Build configuration list for PBXNativeTarget "dbt-sdk" */;
+			buildPhases = (
+				5BF0D6F6F4C3D810B70A75422D305119 /* Headers */,
+				0CC9C81D16CD418BDBEC8D641091856E /* Sources */,
+				9E9C9B65A83EF09CBF3640ECBD05D4A1 /* Frameworks */,
+				A17E59948868FB02A52FCA7E94DC3754 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dbt-sdk";
+			productName = "dbt-sdk";
+			productReference = 47B275CE77429FE9F22FF9094B66E56C /* dbt_sdk.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F9A1CA37BBD9431F80E173C823305A67 /* Pods-Life_in_Bible-Life_in_BibleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6456F0B930874A34D275543C88027A24 /* Build configuration list for PBXNativeTarget "Pods-Life_in_Bible-Life_in_BibleUITests" */;
+			buildPhases = (
+				C0780490B79E4C222360E79AE6D43D02 /* Headers */,
+				F641CE33CD4F5572DCD733005CF9E8B3 /* Sources */,
+				43F4CF1F4853C5402D7C28E3EEF4FAD8 /* Frameworks */,
+				E4CA68CFCBCBEFA71602CABF795A3B62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C12D83D51726937BADDD3D7126E037B7 /* PBXTargetDependency */,
+			);
+			name = "Pods-Life_in_Bible-Life_in_BibleUITests";
+			productName = "Pods-Life_in_Bible-Life_in_BibleUITests";
+			productReference = 4AB8B65FD3E69A39D5314D20F904FBCE /* Pods_Life_in_Bible_Life_in_BibleUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = CA67ABB5086B8C8441AD69CEB57663D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F05D28A9DAD160AD492E8F966590176B /* dbt-sdk */,
+				D7803648EC960787015B404D6193FF3B /* Pods-Life_in_Bible */,
+				F9A1CA37BBD9431F80E173C823305A67 /* Pods-Life_in_Bible-Life_in_BibleUITests */,
+				57246D5B4433FB25AE1B69FB726D8467 /* Pods-Life_in_BibleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D608F13D4F275298FD794CFF62FC160 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A17E59948868FB02A52FCA7E94DC3754 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD57581940D03BAA3525FA115CD62937 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4CA68CFCBCBEFA71602CABF795A3B62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0CC9C81D16CD418BDBEC8D641091856E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E75CB2AF173CA2DE20C80BD7F4B2F04F /* dbt-sdk-dummy.m in Sources */,
+				7C8FB2C1256AA925821B1B6C2C500EEA /* DBT.m in Sources */,
+				D1372D736BDC32D1B75916183F4C0478 /* DBTAsset.m in Sources */,
+				BDBD0E0C30A6C59ACE9E0B7B85196003 /* DBTAudioPath.m in Sources */,
+				ED51E80756B83DE8FD6465439D01E487 /* DBTAudioVerseStart.m in Sources */,
+				B2CD6828C58D094D131EA3B264DB771F /* DBTBook.m in Sources */,
+				D8475E70A991FB495163F9026776333C /* DBTBookOrder.m in Sources */,
+				FAB2F4FED7F2069863C5A0C4B4ECA0C7 /* DBTChapter.m in Sources */,
+				AA6A33B22E0F45C267595E0C03DA5F96 /* DBTMediaLocation.m in Sources */,
+				A5DAD3E1062BF36397DF04A7C0D230D4 /* DBTObject.m in Sources */,
+				E643F4715FE8F0253C58B4FF55886EA4 /* DBTVerse.m in Sources */,
+				7D9DD2F2D0CA454C2268C0266F78544B /* DBTVersion.m in Sources */,
+				A620A094AD0CE2CCAADF581ED1CC36D7 /* DBTVideoPath.m in Sources */,
+				3F237117A0FDECA3970A878AB5104CA8 /* DBTVolume.m in Sources */,
+				E30FCCA912BC019353A9886232EF5976 /* DBTVolumeLanguage.m in Sources */,
+				C1DF3FA9EC3C779058C6124F1ACFC20B /* DBTVolumeOrganization.m in Sources */,
+				CDE852608F39880CF428D3EACED688AE /* DBTWebInterface.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8AE93512B6E87C53A3C9ACF503E42AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				153EC7C2382E2392FDB938E480760CF2 /* Pods-Life_in_BibleTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD6B8C07C9F46B267BBC3F4D91E4650 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A11FA9367B0FF59D677B08A250CEE3C /* Pods-Life_in_Bible-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F641CE33CD4F5572DCD733005CF9E8B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D71A677DFEB6F49D1298A6B439BA4E2 /* Pods-Life_in_Bible-Life_in_BibleUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4505623E5F677BE41F5ECBD1E253F6EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Life_in_Bible";
+			target = D7803648EC960787015B404D6193FF3B /* Pods-Life_in_Bible */;
+			targetProxy = 5307054507FDED9238200A5ADB92B40F /* PBXContainerItemProxy */;
+		};
+		C12D83D51726937BADDD3D7126E037B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "dbt-sdk";
+			target = F05D28A9DAD160AD492E8F966590176B /* dbt-sdk */;
+			targetProxy = 85F9AB7A4B06F4E341DEAACAACB122FB /* PBXContainerItemProxy */;
+		};
+		F6D4E32C3168469CF1F390E05375231B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "dbt-sdk";
+			target = F05D28A9DAD160AD492E8F966590176B /* dbt-sdk */;
+			targetProxy = B5FDE2A7E814A299D507A960E022504C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		15CD18DFB9E788329A22BACA194A2F42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E87AB19D5ECBEFA0A010563636FF8EB6 /* Pods-Life_in_Bible.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Life_in_Bible/Pods-Life_in_Bible-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.14.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Life_in_Bible/Pods-Life_in_Bible.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		19B65268AABB297BF303E8C9D27D9EAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FFEDA5D8EE2A954A323C8E7DF0AD5FF /* Pods-Life_in_BibleTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Life_in_BibleTests/Pods-Life_in_BibleTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.14.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Life_in_BibleTests/Pods-Life_in_BibleTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		28B73F1D05E6E60A89268513DC4E1D11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 946B5915DAAAAFBFBCAD4A49580CC223 /* Pods-Life_in_Bible-Life_in_BibleUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Life_in_Bible-Life_in_BibleUITests/Pods-Life_in_Bible-Life_in_BibleUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.14.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Life_in_Bible-Life_in_BibleUITests/Pods-Life_in_Bible-Life_in_BibleUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		54763B488101CE734AF0CF539D0FE0BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0276F138EA2760AD8C2CA17F34FF6D3 /* dbt-sdk.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/dbt-sdk/dbt-sdk-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/dbt-sdk/dbt-sdk-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/dbt-sdk/dbt-sdk.modulemap";
+				PRODUCT_MODULE_NAME = dbt_sdk;
+				PRODUCT_NAME = dbt_sdk;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		54DA76188F1E24BD6E0A122CC3DC9F90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE6AA5A4256783B2FE0826E6239492E0 /* Pods-Life_in_Bible.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Life_in_Bible/Pods-Life_in_Bible-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.14.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Life_in_Bible/Pods-Life_in_Bible.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7B9FF6CACDDA867D50853EF643B2311E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD88F69EA462BDD6C35025B275662ACD /* Pods-Life_in_Bible-Life_in_BibleUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Life_in_Bible-Life_in_BibleUITests/Pods-Life_in_Bible-Life_in_BibleUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.14.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Life_in_Bible-Life_in_BibleUITests/Pods-Life_in_Bible-Life_in_BibleUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DA9BDCE223FED107379FEBD91B935C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.14.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BBBEC49AED13845D95B48BF4C816A828 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F771FD3190DAB7C123D5E7B23D546069 /* Pods-Life_in_BibleTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Life_in_BibleTests/Pods-Life_in_BibleTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.14.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Life_in_BibleTests/Pods-Life_in_BibleTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BCCBAC944865DDE812BC307AFD31A9B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.14.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		DC1CC8395A056CCB58B161FE4677E0EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0276F138EA2760AD8C2CA17F34FF6D3 /* dbt-sdk.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/dbt-sdk/dbt-sdk-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/dbt-sdk/dbt-sdk-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/dbt-sdk/dbt-sdk.modulemap";
+				PRODUCT_MODULE_NAME = dbt_sdk;
+				PRODUCT_NAME = dbt_sdk;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		051B65EFB7793E5C6470B90BD7482899 /* Build configuration list for PBXNativeTarget "dbt-sdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54763B488101CE734AF0CF539D0FE0BC /* Debug */,
+				DC1CC8395A056CCB58B161FE4677E0EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCCBAC944865DDE812BC307AFD31A9B4 /* Debug */,
+				8DA9BDCE223FED107379FEBD91B935C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6456F0B930874A34D275543C88027A24 /* Build configuration list for PBXNativeTarget "Pods-Life_in_Bible-Life_in_BibleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B9FF6CACDDA867D50853EF643B2311E /* Debug */,
+				28B73F1D05E6E60A89268513DC4E1D11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B82ADA7B92E8BBD9CE87075CEB1559D7 /* Build configuration list for PBXNativeTarget "Pods-Life_in_Bible" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54DA76188F1E24BD6E0A122CC3DC9F90 /* Debug */,
+				15CD18DFB9E788329A22BACA194A2F42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8107D5BE460B4BA220FD8D469DC69C0 /* Build configuration list for PBXNativeTarget "Pods-Life_in_BibleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBBEC49AED13845D95B48BF4C816A828 /* Debug */,
+				19B65268AABB297BF303E8C9D27D9EAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import dbt_sdk
 
 class ChaptersTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getChapters()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,6 +34,20 @@ class ChaptersTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+    
+    func getChapters()  {
+              [DBT .getLibraryChapter(withDamId: "ENGKJVO1DA", bookId: "Gen", success: {(chapterlist) in
+                
+                for chapter in (chapterlist)! {
+                    print((chapter as! DBTChapter).chapterName as Any)
+              }
+                
+              }, failure: {(error) in
+                print(error as Any)
+              })]
+               
+              
+          }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

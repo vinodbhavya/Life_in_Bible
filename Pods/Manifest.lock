@@ -1,0 +1,16 @@
+PODS:
+  - dbt-sdk (0.2.2)
+
+DEPENDENCIES:
+  - dbt-sdk
+
+SPEC REPOS:
+  trunk:
+    - dbt-sdk
+
+SPEC CHECKSUMS:
+  dbt-sdk: 8658548153d0c016b6bfd4adee64f457e17b2db4
+
+PODFILE CHECKSUM: f85dc115ebf4a0e4c0960dc0d2dc95240576a983
+
+COCOAPODS: 1.8.4

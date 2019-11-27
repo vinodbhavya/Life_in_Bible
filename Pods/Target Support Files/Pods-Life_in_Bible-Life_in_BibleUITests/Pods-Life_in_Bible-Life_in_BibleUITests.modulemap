@@ -1,0 +1,6 @@
+framework module Pods_Life_in_Bible_Life_in_BibleUITests {
+  umbrella header "Pods-Life_in_Bible-Life_in_BibleUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
