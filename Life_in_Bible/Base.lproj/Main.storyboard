@@ -116,33 +116,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pNe-Ar-WLM">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookTableViewCell" rowHeight="50" id="w66-ed-tS2" customClass="BookTableViewCell" customModule="Life_in_Bible">
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pNe-Ar-WLM" id="P0P-Hh-Oyc">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w66-ed-tS2" id="y8s-5e-qmo">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5Z-fj-Bqg">
-                                            <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiA-b9-r3B">
+                                            <rect key="frame" x="20" y="15" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="z5Z-fj-Bqg" firstAttribute="top" secondItem="P0P-Hh-Oyc" secondAttribute="top" constant="11" id="V04-yP-HHL"/>
-                                        <constraint firstItem="z5Z-fj-Bqg" firstAttribute="leading" secondItem="P0P-Hh-Oyc" secondAttribute="leading" constant="20" id="w5j-K3-hUp"/>
+                                        <constraint firstItem="aiA-b9-r3B" firstAttribute="leading" secondItem="y8s-5e-qmo" secondAttribute="leading" constant="20" id="7gX-G9-C9U"/>
+                                        <constraint firstItem="aiA-b9-r3B" firstAttribute="top" secondItem="y8s-5e-qmo" secondAttribute="top" constant="15" id="QJm-8B-vWz"/>
+                                        <constraint firstAttribute="trailing" secondItem="aiA-b9-r3B" secondAttribute="trailing" constant="352" id="xAK-Ud-vXo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="r4B-8P-gcx" kind="show" id="7D0-G3-FyP"/>
+                                    <outlet property="nameLabel" destination="aiA-b9-r3B" id="Rza-ow-CZ3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="He7-Ev-OAv" id="5PS-LT-w4s"/>
-                            <outlet property="delegate" destination="He7-Ev-OAv" id="yTm-Bt-J7k"/>
+                            <outlet property="dataSource" destination="He7-Ev-OAv" id="Fl6-9O-Hjc"/>
+                            <outlet property="delegate" destination="He7-Ev-OAv" id="bxB-IC-FlR"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="49P-fA-a0v"/>
@@ -239,6 +240,6 @@
         <image name="1.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SUr-TO-9R9"/>
+        <segue reference="dua-4c-U4K"/>
     </inferredMetricsTieBreakers>
 </document>

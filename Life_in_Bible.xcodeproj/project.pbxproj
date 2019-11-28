@@ -22,6 +22,7 @@
 		A00F8C29237DA9BD0097C968 /* Verses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F8C28237DA9BD0097C968 /* Verses.swift */; };
 		A00F8C2B237DAA9F0097C968 /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F8C2A237DAA9F0097C968 /* BooksTableViewController.swift */; };
 		A00F8C2F237DAAD00097C968 /* VersesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F8C2E237DAAD00097C968 /* VersesTableViewController.swift */; };
+		A05BFF1D23901FB50050C59D /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05BFF1C23901FB50050C59D /* BookTableViewCell.swift */; };
 		A0B51400238EBFB800FE8908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B513FF238EBFB800FE8908 /* ViewController.swift */; };
 		A0B51402238ED96200FE8908 /* ChaptersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B51401238ED96200FE8908 /* ChaptersCollectionViewController.swift */; };
 		A0B51404238EDA6C00FE8908 /* ChapterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B51403238EDA6C00FE8908 /* ChapterCollectionViewCell.swift */; };
@@ -71,6 +72,7 @@
 		A00F8C28237DA9BD0097C968 /* Verses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verses.swift; sourceTree = "<group>"; };
 		A00F8C2A237DAA9F0097C968 /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
 		A00F8C2E237DAAD00097C968 /* VersesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersesTableViewController.swift; sourceTree = "<group>"; };
+		A05BFF1C23901FB50050C59D /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		A0B513FF238EBFB800FE8908 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A0B51401238ED96200FE8908 /* ChaptersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersCollectionViewController.swift; sourceTree = "<group>"; };
 		A0B51403238EDA6C00FE8908 /* ChapterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				7A9CDAEE23746292003D4FDF /* AppDelegate.swift */,
 				7A9CDAF023746292003D4FDF /* SceneDelegate.swift */,
 				A0B51403238EDA6C00FE8908 /* ChapterCollectionViewCell.swift */,
+				A05BFF19238F39960050C59D /* Custom cell */,
 				A00F8C23237DA8110097C968 /* Model */,
 				A0D62036237B1C6700F67BBB /* Controllers */,
 				7A9CDAF423746292003D4FDF /* Main.storyboard */,
@@ -197,6 +200,14 @@
 				A00F8C28237DA9BD0097C968 /* Verses.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A05BFF19238F39960050C59D /* Custom cell */ = {
+			isa = PBXGroup;
+			children = (
+				A05BFF1C23901FB50050C59D /* BookTableViewCell.swift */,
+			);
+			path = "Custom cell";
 			sourceTree = "<group>";
 		};
 		A0D62036237B1C6700F67BBB /* Controllers */ = {
@@ -455,6 +466,7 @@
 				A0B51400238EBFB800FE8908 /* ViewController.swift in Sources */,
 				A00F8C2F237DAAD00097C968 /* VersesTableViewController.swift in Sources */,
 				A00F8C27237DA99E0097C968 /* Chapters.swift in Sources */,
+				A05BFF1D23901FB50050C59D /* BookTableViewCell.swift in Sources */,
 				A00F8C29237DA9BD0097C968 /* Verses.swift in Sources */,
 				7A9CDAEF23746292003D4FDF /* AppDelegate.swift in Sources */,
 				7A9CDAF123746292003D4FDF /* SceneDelegate.swift in Sources */,
