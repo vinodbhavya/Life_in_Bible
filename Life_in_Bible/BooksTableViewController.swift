@@ -10,14 +10,13 @@ import UIKit
 import dbt_sdk
 class BooksTableViewController: UITableViewController {
     
-    var books = [Any?]()
+    var books = [DBTBook]()
     var dam_id: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getBooks()
-        print(dam_id as Any)
-        
+        print(dam_id)
         
         
         
@@ -41,55 +40,60 @@ class BooksTableViewController: UITableViewController {
         
     }
     
-    func getBooks()  {
-          [DBT .getLibraryBook(withDamId: dam_id, success: {(bookList) in
-        
-         for book in (bookList)! {
-           print((book as! DBTBook).bookName!)
-        }
-        
-        
-       //  print(bookList)
-        
-        }, failure: {(error) in
-           print(error!)
-        })]
-         }
-    
-        
-      //  [DBT .getLibraryBook(withDamId: dam_id, success:createBookList, failure:handleError)]
-        /*  func createBookList(_ bookList:[Any]?) {
-        }
-     func handleError(_ error:Error?) {
-        }*/
-    
-    
-      let cellIdentifier = "BookTableViewCell"
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
+        
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        
+        let cellIdentifier = "BookTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier:
+            cellIdentifier, for: indexPath) as? BookTableViewCell else {
+                fatalError("The dequeued cell is not an instance of BookTableViewCell.")
+        }
+        // Fetches the appropriate meal for the data source layout.
+        
+        let book = books[indexPath.row]
+        cell.nameLabel.text = book.bookName
         
         return cell
         
     }
     
-   
-        
-       /* let cell = UITableViewCell()
-        cell.textLabel?.text = books[indexPath.row] as? String
-         // Configure the cell...
-        
-        return cell*/
-        
-        
-      
-        
-        
-        
-        
-        
-        
+    func getBooks()  {
+        [DBT .getLibraryBook(withDamId: dam_id, success: {(bookList) in
+            
+            for book in (bookList)! {
+                print((book as! DBTBook).bookName!)
+            }
+            
+            self.books = bookList as! [DBTBook]
+           
+            //  print(bookList)
+            self.tableView.reloadData()
+            
+            
+        }, failure: {(error) in
+            print(error!)
+        })]
+    }
+    
+    
+    //  [DBT .getLibraryBook(withDamId: dam_id, success:createBookList, failure:handleError)]
+    /*  func createBookList(_ bookList:[Any]?) {
+     }
+     func handleError(_ error:Error?) {
+     }*/
+    
+    
+
+    
+    
+    
+    /* let cell = UITableViewCell()
+     cell.textLabel?.text = books[indexPath.row] as? String
+     // Configure the cell...
+     
+     return cell*/
     
     
     

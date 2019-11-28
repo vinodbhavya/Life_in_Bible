@@ -111,7 +111,7 @@
         <scene sceneID="N7l-V0-EfK">
             <objects>
                 <tableViewController storyboardIdentifier="BooksTableViewController" id="He7-Ev-OAv" customClass="BooksTableViewController" customModule="Life_in_Bible" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dne-tS-b0h">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dne-tS-b0h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -124,7 +124,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiA-b9-r3B">
-                                            <rect key="frame" x="20" y="15" width="42" height="21"/>
+                                            <rect key="frame" x="20" y="15" width="374" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -133,7 +133,7 @@
                                     <constraints>
                                         <constraint firstItem="aiA-b9-r3B" firstAttribute="leading" secondItem="y8s-5e-qmo" secondAttribute="leading" constant="20" id="7gX-G9-C9U"/>
                                         <constraint firstItem="aiA-b9-r3B" firstAttribute="top" secondItem="y8s-5e-qmo" secondAttribute="top" constant="15" id="QJm-8B-vWz"/>
-                                        <constraint firstAttribute="trailing" secondItem="aiA-b9-r3B" secondAttribute="trailing" constant="352" id="xAK-Ud-vXo"/>
+                                        <constraint firstAttribute="trailing" secondItem="aiA-b9-r3B" secondAttribute="trailing" constant="20" id="xAK-Ud-vXo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
