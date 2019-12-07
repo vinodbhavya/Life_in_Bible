@@ -149,7 +149,6 @@
 			children = (
 				7A9CDAEE23746292003D4FDF /* AppDelegate.swift */,
 				7A9CDAF023746292003D4FDF /* SceneDelegate.swift */,
-				A0B51403238EDA6C00FE8908 /* ChapterCollectionViewCell.swift */,
 				A05BFF19238F39960050C59D /* Custom cell */,
 				A00F8C23237DA8110097C968 /* Model */,
 				A0D62036237B1C6700F67BBB /* Controllers */,
@@ -206,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				A05BFF1C23901FB50050C59D /* BookTableViewCell.swift */,
+				A0B51403238EDA6C00FE8908 /* ChapterCollectionViewCell.swift */,
 			);
 			path = "Custom cell";
 			sourceTree = "<group>";
@@ -213,11 +213,11 @@
 		A0D62036237B1C6700F67BBB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A00F8C2A237DAA9F0097C968 /* BooksTableViewController.swift */,
 				A0B513FF238EBFB800FE8908 /* ViewController.swift */,
+				A00F8C2A237DAA9F0097C968 /* BooksTableViewController.swift */,
+				A0B51401238ED96200FE8908 /* ChaptersCollectionViewController.swift */,
 				A00F8C2E237DAAD00097C968 /* VersesTableViewController.swift */,
 				A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */,
-				A0B51401238ED96200FE8908 /* ChaptersCollectionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

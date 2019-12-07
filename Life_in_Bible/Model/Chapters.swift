@@ -8,17 +8,16 @@
 
 import Foundation
 import UIKit
-class Chapter {
+import dbt_sdk
+
+class Chapter: DBTChapter {
     
-    var bookid: String
-    var chaptername: String
-    var chapterid: Int
-   
-    
-    init(bookid: String, chaptername: String, chapterid: Int) {
-        self.bookid = bookid
-        self.chaptername = chaptername
-        self.chapterid = chapterid
-        
+    static var chapterList: [Chapter] = []
+
+    private override init() {
+    super.init()
     }
+    
+    
+   
 }

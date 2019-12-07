@@ -10,7 +10,10 @@ import UIKit
 
 class BookTableViewCell: UITableViewCell {
     
+    
     @IBOutlet weak var nameLabel: UILabel!
+    
+//    var bookId: String?
     
     
     override func awakeFromNib() {

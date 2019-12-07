@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import dbt_sdk
 
 class ViewController: UIViewController {
     
@@ -21,12 +22,12 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "OldTestamentSegue") {
             if let viewcontroller = segue.destination as? BooksTableViewController {
-                viewcontroller.dam_id = "ENGKJVO1DA"
+                viewcontroller.damId = "ENGKJVO1DA"
                 
             }
         } else if(segue.identifier == "NewTestamentSegue") {
             if let viewcontroller = segue.destination as? BooksTableViewController {
-                viewcontroller.dam_id = "ENGKJVN1DA"
+                viewcontroller.damId = "ENGKJVN1DA"
             }
         }
         

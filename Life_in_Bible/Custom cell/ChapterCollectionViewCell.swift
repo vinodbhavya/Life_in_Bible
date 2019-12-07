@@ -11,4 +11,8 @@ import UIKit
 class ChapterCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    
+    
+
 }

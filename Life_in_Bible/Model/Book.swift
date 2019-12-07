@@ -12,12 +12,13 @@ class Book {
     
     var bookname: String 
     var bookid: String
-    var numberofchapters: Int
+    var chapterList: Int
     
-init(bookname: String, bookid: String, numberofchapters: Int){
+init(bookname: String, bookid: String, chapterList: Int){
     self.bookname = bookname
     self.bookid = bookid
-    self.numberofchapters = numberofchapters
+    self.chapterList = chapterList
+    
     
 }
 }
