@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Life_in_Bible
 //
-//  Created by rajasekharreddy.talamanchi on 27/11/19.
+//  Created by bhavya on 27/11/19.
 //  Copyright © 2019 Mohammad Saiful Kabir. All rights reserved.
 //
 
@@ -22,12 +22,12 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "OldTestamentSegue") {
             if let viewcontroller = segue.destination as? BooksTableViewController {
-                viewcontroller.damId = "ENGKJVO1DA"
+                viewcontroller.damId = "ENGESVO2ET"
                 
             }
         } else if(segue.identifier == "NewTestamentSegue") {
             if let viewcontroller = segue.destination as? BooksTableViewController {
-                viewcontroller.damId = "ENGKJVN1DA"
+                viewcontroller.damId = "ENGESVN2ET"
             }
         }
         

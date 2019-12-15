@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import UIKit
+import dbt_sdk
+
+class VerseInfo: DBTVerse {
+    
+    static var verseInfo: [VerseInfo] = []
+
+    private override init() {
+    super.init()
+    }
+    
+    
+   
+}

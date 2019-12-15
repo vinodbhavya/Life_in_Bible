@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -138,7 +137,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="aiA-b9-r3B" id="Rza-ow-CZ3"/>
-                                    <segue destination="r4B-8P-gcx" kind="show" identifier="chaptersSegue" id="Igc-O9-2Zu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -148,10 +146,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="49P-fA-a0v"/>
+                    <connections>
+                        <segue destination="r4B-8P-gcx" kind="show" id="cs2-m5-7yc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ik-za-nXj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3473.913043478261" y="164.73214285714286"/>
+            <point key="canvasLocation" x="3452" y="165"/>
         </scene>
         <!--Chapters Collection View Controller-->
         <scene sceneID="Ci7-Fw-5GS">
@@ -161,30 +162,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="100" maxX="0.0" maxY="0.0"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VlI-oY-r9i">
                             <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChapterCell" id="15m-gk-30i" customClass="ChapterCollectionViewCell" customModule="Life_in_Bible" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                <rect key="frame" x="15" y="15" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Zf-xO-7K2">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5S-dz-wud">
-                                            <rect key="frame" x="8" y="9" width="134" height="141"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JPo-9E-RLS">
+                                            <rect key="frame" x="0.0" y="11" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="9rj-3e-fIj"/>
+                                                <constraint firstAttribute="width" constant="150" id="wba-lh-9YH"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
-                                </collectionViewCellContentView>
+                                </view>
                                 <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="customSize" width="150" height="150"/>
                                 <connections>
-                                    <outlet property="imageView" destination="O5S-dz-wud" id="I14-wR-GFH"/>
+                                    <outlet property="imageView" destination="JPo-9E-RLS" id="Qhh-OS-0k2"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -198,6 +203,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGp-ps-VkZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4282.608695652174" y="164.73214285714286"/>
+        </scene>
+        <!--Verse Table View Controller-->
+        <scene sceneID="xcO-NH-WVM">
+            <objects>
+                <tableViewController storyboardIdentifier="VerseTableViewController" id="fpS-nS-WWT" customClass="VerseTableViewController" customModule="Life_in_Bible" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W8Y-Co-esN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VerseCell" id="241-8L-WHV" customClass="VerseTableViewCell" customModule="Life_in_Bible" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="241-8L-WHV" id="JtE-IH-oiv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tab" translatesAutoresizingMaskIntoConstraints="NO" id="n8I-pf-V66">
+                                            <rect key="frame" x="15" y="15" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="r1y-oB-OTL">
+                                            <rect key="frame" x="76" y="0.0" width="200" height="43.5"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="r1y-oB-OTL" firstAttribute="leading" secondItem="JtE-IH-oiv" secondAttribute="leading" constant="76" id="8JF-bx-mcu"/>
+                                        <constraint firstAttribute="bottom" secondItem="r1y-oB-OTL" secondAttribute="bottom" id="O7w-es-Y8p"/>
+                                        <constraint firstAttribute="trailing" secondItem="r1y-oB-OTL" secondAttribute="trailing" id="TiZ-gh-EtW"/>
+                                        <constraint firstItem="r1y-oB-OTL" firstAttribute="top" secondItem="JtE-IH-oiv" secondAttribute="top" id="jHs-Ie-2gj"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="verseImageView" destination="n8I-pf-V66" id="g9r-Jx-TP5"/>
+                                    <outlet property="verseText" destination="r1y-oB-OTL" id="0gu-vc-gti"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fpS-nS-WWT" id="5Lv-WV-wbS"/>
+                            <outlet property="delegate" destination="fpS-nS-WWT" id="fSm-bY-vfh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYU-lS-107" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5162.3188405797109" y="164.73214285714286"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BVf-4D-dIO">
@@ -237,6 +294,9 @@
             <point key="canvasLocation" x="1756.521739130435" y="164.73214285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab" width="512" height="512"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dua-4c-U4K"/>
     </inferredMetricsTieBreakers>

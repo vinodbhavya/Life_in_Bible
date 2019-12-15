@@ -1,30 +1,26 @@
 //
-//  BookTableViewCell.swift
+//  VerseTableViewCell.swift
 //  Life_in_Bible
 //
-//  Created by bhavya on 28/11/19.
+//  Created by Bhavya on 15/12/19.
 //  Copyright © 2019 Mohammad Saiful Kabir. All rights reserved.
 //
 
 import UIKit
 
-class BookTableViewCell: UITableViewCell {
+class VerseTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var verseImageView: UIImageView!
     
-//    var bookId: String?
-    
+    @IBOutlet weak var verseText: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
+    
 }

@@ -64,10 +64,11 @@ class BooksTableViewController: UITableViewController {
             chapterViewController.bookId = selectedBook!.bookId
         }
         print("beforePresent")
-        print(chapterCV.bookId)
-        print(chapterCV.damId)
+        print(chapterCV.bookId as Any)
+        print(chapterCV.damId as Any)
         
-        present(chapterCV, animated: true, completion: nil)
+        navigationController?.pushViewController(chapterCV, animated: true)
+        //present(chapterCV, animated: true, completion: nil)
     }
     
     func getBooks()  {
