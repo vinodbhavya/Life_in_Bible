@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -158,38 +159,39 @@
         <scene sceneID="Ci7-Fw-5GS">
             <objects>
                 <collectionViewController restorationIdentifier="ChaptersCollectionViewController" storyboardIdentifier="ChaptersCollectionViewController" id="r4B-8P-gcx" customClass="ChaptersCollectionViewController" customModule="Life_in_Bible" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="PKJ-eI-8rh">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" id="PKJ-eI-8rh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="100" maxX="0.0" maxY="0.0"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VlI-oY-r9i">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J3O-NB-N6O">
                             <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChapterCell" id="15m-gk-30i" customClass="ChapterCollectionViewCell" customModule="Life_in_Bible" customModuleProvider="target">
-                                <rect key="frame" x="15" y="15" width="150" height="150"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" reuseIdentifier="ChapterCell" id="15m-gk-30i" customClass="ChapterCollectionViewCell" customModule="Life_in_Bible" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZTB-yZ-faY">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JPo-9E-RLS">
-                                            <rect key="frame" x="0.0" y="11" width="50" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="128" id="9rj-3e-fIj"/>
-                                                <constraint firstAttribute="width" constant="150" id="wba-lh-9YH"/>
-                                            </constraints>
-                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwo-cc-AxZ" customClass="CustomButton" customModule="Life_in_Bible" customModuleProvider="target">
+                                            <rect key="frame" x="15" y="15" width="70" height="70"/>
+                                        </button>
                                     </subviews>
-                                </view>
-                                <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="customSize" width="150" height="150"/>
+                                    <constraints>
+                                        <constraint firstItem="qwo-cc-AxZ" firstAttribute="leading" secondItem="ZTB-yZ-faY" secondAttribute="leading" constant="10" id="Qch-aw-uVI"/>
+                                        <constraint firstItem="qwo-cc-AxZ" firstAttribute="top" secondItem="ZTB-yZ-faY" secondAttribute="top" constant="10" id="RAo-Pp-T6q"/>
+                                        <constraint firstAttribute="trailing" secondItem="qwo-cc-AxZ" secondAttribute="trailing" constant="10" id="Vt1-zF-KKy"/>
+                                        <constraint firstAttribute="bottom" secondItem="qwo-cc-AxZ" secondAttribute="bottom" constant="10" id="W3h-Iz-5Yc"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="imageView" destination="JPo-9E-RLS" id="Qhh-OS-0k2"/>
+                                    <outlet property="chapterButton" destination="qwo-cc-AxZ" id="s4g-zB-BAl"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -213,36 +215,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VerseCell" id="241-8L-WHV" customClass="VerseTableViewCell" customModule="Life_in_Bible" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VerseCell" rowHeight="90" id="241-8L-WHV" customClass="VerseTableViewCell" customModule="Life_in_Bible" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="241-8L-WHV" id="JtE-IH-oiv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tab" translatesAutoresizingMaskIntoConstraints="NO" id="n8I-pf-V66">
-                                            <rect key="frame" x="15" y="15" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab" translatesAutoresizingMaskIntoConstraints="NO" id="n8I-pf-V66">
+                                            <rect key="frame" x="20" y="17" width="56" height="56"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="n8I-pf-V66" secondAttribute="height" multiplier="1:1" id="o6H-k3-HNs"/>
+                                            </constraints>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="r1y-oB-OTL">
-                                            <rect key="frame" x="76" y="0.0" width="200" height="43.5"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFx-Zc-7W9">
+                                            <rect key="frame" x="84" y="29" width="310" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="r1y-oB-OTL" firstAttribute="leading" secondItem="JtE-IH-oiv" secondAttribute="leading" constant="76" id="8JF-bx-mcu"/>
-                                        <constraint firstAttribute="bottom" secondItem="r1y-oB-OTL" secondAttribute="bottom" id="O7w-es-Y8p"/>
-                                        <constraint firstAttribute="trailing" secondItem="r1y-oB-OTL" secondAttribute="trailing" id="TiZ-gh-EtW"/>
-                                        <constraint firstItem="r1y-oB-OTL" firstAttribute="top" secondItem="JtE-IH-oiv" secondAttribute="top" id="jHs-Ie-2gj"/>
+                                        <constraint firstItem="n8I-pf-V66" firstAttribute="top" secondItem="JtE-IH-oiv" secondAttribute="topMargin" constant="6" id="637-Cl-hJx"/>
+                                        <constraint firstAttribute="trailing" secondItem="WFx-Zc-7W9" secondAttribute="trailing" constant="20" id="CUP-Pc-CU3"/>
+                                        <constraint firstItem="WFx-Zc-7W9" firstAttribute="leading" secondItem="n8I-pf-V66" secondAttribute="trailing" constant="8" id="Df0-Wl-LYe"/>
+                                        <constraint firstItem="n8I-pf-V66" firstAttribute="leading" secondItem="JtE-IH-oiv" secondAttribute="leadingMargin" id="E0Q-NQ-2fO"/>
+                                        <constraint firstItem="n8I-pf-V66" firstAttribute="centerY" secondItem="JtE-IH-oiv" secondAttribute="centerY" id="iwD-2A-kSq"/>
+                                        <constraint firstItem="WFx-Zc-7W9" firstAttribute="top" secondItem="JtE-IH-oiv" secondAttribute="top" constant="29" id="wIQ-HO-26x"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="verseImageView" destination="n8I-pf-V66" id="g9r-Jx-TP5"/>
-                                    <outlet property="verseText" destination="r1y-oB-OTL" id="0gu-vc-gti"/>
+                                    <outlet property="verseText" destination="WFx-Zc-7W9" id="L7x-77-hfn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

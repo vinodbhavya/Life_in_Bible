@@ -45,20 +45,27 @@ class VerseTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? VerseTableViewCell else {
             fatalError("The dequeued cell is not an instance of VerseTableViewCell.")
         }
-//        cell.imageView?.image = UIImage(named: "tab")
+        
+        
+
+        
+       
         cell.verseText.text = verseList[indexPath.row].verseText
-        cell.verseText.isScrollEnabled = false
-        cell.verseText.isEditable = false
-        cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        
+//        cell.verseText.isScrollEnabled = false
+//        cell.verseText.isEditable = false
+        
+//        cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        
+        
 //        cell.verseText.text = verseList[indexPath.row].verseText
 //        cell.verseText.lineBreakMode = NSLineBreakMode.byWordWrapping
 //        cell.verseText.sizeToFit()
+        
+        
         return cell
         
     }
-    
-    
-    
     
     
     func getVerses() {
@@ -67,7 +74,7 @@ class VerseTableViewController: UITableViewController {
         
         [DBT .getTextVerse(withDamId: damId, book: bookId, chapter: chapterId, verseStart: 1 as! NSNumber, verseEnd: 50 as! NSNumber, success: {(verseList) in
             
-            print(verseList)
+            print(verseList as Any)
                        self.verseList = verseList as! [DBTVerse]
                         self.tableView.reloadData()
         }, failure: {(error) in

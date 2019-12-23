@@ -8,10 +8,22 @@
 
 import UIKit
 
+@IBDesignable
 class CustomButton: UIButton {
     
+   
+    @IBInspectable
    var barColor: UIColor = UIColor.systemBlue
+    @IBInspectable
+    var fillColor: UIColor = UIColor.green
 
+    override func draw(_ rect: CGRect) {
+    let path = UIBezierPath(ovalIn: rect)
+        fillColor.setFill()
+    path.fill()
+    }
+    
+    
     }
     
     

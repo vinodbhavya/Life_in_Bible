@@ -29,6 +29,7 @@
 		DB246D607D70CB58CA2B3234 /* Pods_Life_in_Bible_Life_in_BibleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4EAA7701907B970FD7724C /* Pods_Life_in_Bible_Life_in_BibleUITests.framework */; };
 		EA51EE8B23A6838500D11E65 /* VerseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51EE8A23A6838500D11E65 /* VerseTableViewCell.swift */; };
 		EA51EE8D23A6854500D11E65 /* VerseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51EE8C23A6854500D11E65 /* VerseTableViewController.swift */; };
+		EA7216D923B16B9900C24BCF /* VerseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7216D823B16B9900C24BCF /* VerseCollectionViewCell.swift */; };
 		EAE1733A23A127B200409AB5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE1733923A127B200409AB5 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		E38FF65232D10CB68BBE4C75 /* Pods_Life_in_Bible.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Life_in_Bible.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA51EE8A23A6838500D11E65 /* VerseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseTableViewCell.swift; sourceTree = "<group>"; };
 		EA51EE8C23A6854500D11E65 /* VerseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseTableViewController.swift; sourceTree = "<group>"; };
+		EA7216D823B16B9900C24BCF /* VerseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAE1733923A127B200409AB5 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		EC5A7172E579723429117F48 /* Pods-Life_in_BibleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life_in_BibleTests.release.xcconfig"; path = "Target Support Files/Pods-Life_in_BibleTests/Pods-Life_in_BibleTests.release.xcconfig"; sourceTree = "<group>"; };
 		F633D30D5038BEA1DCD222B2 /* Pods_Life_in_BibleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Life_in_BibleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +214,7 @@
 				A05BFF1C23901FB50050C59D /* BookTableViewCell.swift */,
 				A0B51403238EDA6C00FE8908 /* ChapterCollectionViewCell.swift */,
 				EA51EE8A23A6838500D11E65 /* VerseTableViewCell.swift */,
+				EA7216D823B16B9900C24BCF /* VerseCollectionViewCell.swift */,
 			);
 			path = "Custom cell";
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				A0B51402238ED96200FE8908 /* ChaptersCollectionViewController.swift in Sources */,
 				A0B51400238EBFB800FE8908 /* ViewController.swift in Sources */,
 				A00F8C27237DA99E0097C968 /* Chapters.swift in Sources */,
+				EA7216D923B16B9900C24BCF /* VerseCollectionViewCell.swift in Sources */,
 				EAE1733A23A127B200409AB5 /* CustomButton.swift in Sources */,
 				A05BFF1D23901FB50050C59D /* BookTableViewCell.swift in Sources */,
 				EA51EE8B23A6838500D11E65 /* VerseTableViewCell.swift in Sources */,

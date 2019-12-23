@@ -13,9 +13,25 @@ import dbt_sdk
 class ChaptersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var chapterList: [DBTChapter] = []
+    var verseList: [DBTVerse] = []
     var bookId: String?
     var damId: String?
+    var transparentView = UIView()
     private let reuseIdentifier = "ChapterCell"
+    
+    
+    var collectionViewHeight: CGFloat = 9 * 50
+    var isChapter = true
+    
+    
+    let verseCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(VerseCollectionViewCell.self, forCellWithReuseIdentifier: "VerseCell")
+        cv.backgroundColor = .white
+        return cv
+    }()
     
     
     override func viewDidLoad() {
@@ -25,85 +41,139 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
     }
     
     override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
+        super.didReceiveMemoryWarning()
     }
     
-    /*  @IBAction func chapterButton(_ sender: UIButton) {
-     //perform action
-     }*/
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetsForSectionAtIndex index: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 100, left: 8, bottom: 0, right: 8)
-    }
     
     
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return chapterList.count
+        if isChapter{
+            return chapterList.count
+        }else{
+            return verseList.count
+        }
         
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ChapterCollectionViewCell
-        
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        cell.imageView.tag = indexPath.row
-        cell.imageView.isUserInteractionEnabled = true
-        cell.imageView.addGestureRecognizer(tapGestureRecognizer)
-        //        cell.imageView.addGestureRecognizer(tapGestureRecognizer)
-        
-        
-        let titleLabel = UILabel(frame: CGRect(x: 15 , y: 8, width: 30, height: 30))
-        titleLabel.text = chapterList[indexPath.row].chapterId
-        titleLabel.textColor = UIColor.black
-        titleLabel.font = UIFont(name:"chalkboard SE", size: 18)
-        cell.imageView.addSubview(titleLabel)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cell = CGSize(width: 70, height: 70)
         
         return cell
         
     }
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
-        let selectedChapter = chapterList[tappedImage.tag]
     
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if isChapter{
+            
+            
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ChapterCollectionViewCell
+            
+            
+            cell.chapterButton.tag = indexPath.row
+            cell.chapterButton.isUserInteractionEnabled = true
+            
+            cell.chapterButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+            
+            
+            
+            //        Note: we need to calculate left margin(x) label dynamically
+            //        1. find the length of character
+            //        2. to calculate left margin based on length
+            
+            let titleLabel = UILabel(frame: CGRect(x: 16 , y: 12, width: 25, height: 25))
+            titleLabel.text = chapterList[indexPath.row].chapterId
+            titleLabel.textColor = UIColor.black
+            titleLabel.font = UIFont(name:"chalkboard SE", size: 19)
+            cell.chapterButton.addSubview(titleLabel)
+            
+            
+            return cell
+        }else{
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VerseCell", for: indexPath) as? VerseCollectionViewCell else {
+                fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            }
+            
+            let titleLabel = UILabel(frame: CGRect(x: 20, y: 7.5, width: 30, height: 30))
+            titleLabel.text = Chapter.chapterList[indexPath.row].chapterId
+            titleLabel.textColor = UIColor.black
+            titleLabel.font = UIFont(name:"chalkboard SE", size: 18)
+            cell.bg.image = #imageLiteral(resourceName: "tab")
+            cell.bg.addSubview(titleLabel)
+            
+            return cell
+            
+            
+        }
+        
+    }
+    
+    
+    @objc func buttonTapped(_ sender: CustomButton)
+    {
+        
+        let selectedChapter = chapterList[sender.tag]
         print(selectedChapter)
         
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-
-//        guard let verseCV = mainStoryBoard.instantiateViewController(withIdentifier: "VerseTableViewController") as? VerseTableViewController else {
-//        return
-//        }
-
-        guard let verseCV = mainStoryBoard.instantiateViewController(identifier: "VerseTableViewController") as? VerseTableViewController
-            else {
-            return
-        }
-
-        if let verseViewController = verseCV as? VerseTableViewController {
-           verseViewController.damId = selectedChapter.damId
-            verseViewController.bookId = selectedChapter.bookId
-            verseViewController.chapterId = selectedChapter.chapterId as? NSNumber
-        }
+        getVerses(selectedChapter.damId, selectedChapter.bookId, NSNumber(pointer: selectedChapter.chapterId))
         
-        /*
-        print("beforePresent")
-        print(verseCV.bookId as Any)
-        print(verseCV.damId as Any)
-        */
         
-        navigationController?.pushViewController(verseCV, animated: true)
         
-        // Your action
+        let window = UIApplication.shared.keyWindow
+        transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        transparentView.frame = self.view.frame
+        transparentView.alpha = 0
+        window?.addSubview(transparentView)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onClickTransperentView))
+        transparentView.addGestureRecognizer(tapGesture)
+        
+        let screenSize = UIScreen.main.bounds.size
+        collectionView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: collectionViewHeight)
+        window?.addSubview(collectionView)
+        
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 1.0, options: .curveEaseInOut,
+                       animations: {
+                        self.transparentView.alpha = 0.5
+                        self.collectionView.frame = CGRect(x: 0, y: screenSize.height - self.collectionViewHeight, width: screenSize.width, height: self.collectionViewHeight)
+        }, completion: nil)
+        
+        
+        
+    }
+    
+    @objc func onClickTransperentView () {
+        
+        
+        let screenSize = UIScreen.main.bounds.size
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 1.0, options: .curveEaseInOut,
+                       animations: {
+                        self.transparentView.alpha = 0
+                        self.collectionView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.collectionViewHeight)
+        }, completion: nil)
+        
+        
+        isChapter = true
+        //        self.viewDidLoad()
+        
+        //        navigationController?.pushViewController(self, animated: true)
+        
+        
     }
     
     
@@ -119,42 +189,23 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         })]
     }
     
+    func getVerses(_ damId: String, _ bookId: String, _ chapterId: NSNumber) {
+        
+        
+        print("getVerses")
+        [DBT .getTextVerse(withDamId: damId, book: bookId, chapter: chapterId, verseStart: 1 as! NSNumber, verseEnd: 50 as! NSNumber, success: {(verseList) in
+            
+            print(verseList as Any)
+            self.verseList = verseList as! [DBTVerse]
+            
+        }, failure: {(error) in
+            print(error!)
+            
+        })]
+        
+    }
     
     
-    // Configure the cell
     
-    
-    
-    
-    // MARK: UICollectionViewDelegate
-    
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment this method to specify if the specified item should be selected
-     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
     
 }
