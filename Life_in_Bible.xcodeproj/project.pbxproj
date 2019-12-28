@@ -27,6 +27,7 @@
 		A0B51404238EDA6C00FE8908 /* ChapterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B51403238EDA6C00FE8908 /* ChapterCollectionViewCell.swift */; };
 		A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */; };
 		DB246D607D70CB58CA2B3234 /* Pods_Life_in_Bible_Life_in_BibleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4EAA7701907B970FD7724C /* Pods_Life_in_Bible_Life_in_BibleUITests.framework */; };
+		EA22917623B79C0600097458 /* VerseCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22917523B79C0600097458 /* VerseCollectionViewDataSource.swift */; };
 		EA51EE8B23A6838500D11E65 /* VerseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51EE8A23A6838500D11E65 /* VerseTableViewCell.swift */; };
 		EA51EE8D23A6854500D11E65 /* VerseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51EE8C23A6854500D11E65 /* VerseTableViewController.swift */; };
 		EA7216D923B16B9900C24BCF /* VerseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7216D823B16B9900C24BCF /* VerseCollectionViewCell.swift */; };
@@ -80,6 +81,7 @@
 		A0B51403238EDA6C00FE8908 /* ChapterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxViewController.swift; sourceTree = "<group>"; };
 		E38FF65232D10CB68BBE4C75 /* Pods_Life_in_Bible.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Life_in_Bible.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA22917523B79C0600097458 /* VerseCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		EA51EE8A23A6838500D11E65 /* VerseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseTableViewCell.swift; sourceTree = "<group>"; };
 		EA51EE8C23A6854500D11E65 /* VerseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseTableViewController.swift; sourceTree = "<group>"; };
 		EA7216D823B16B9900C24BCF /* VerseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				A0B513FF238EBFB800FE8908 /* ViewController.swift */,
 				A00F8C2A237DAA9F0097C968 /* BooksTableViewController.swift */,
 				A0B51401238ED96200FE8908 /* ChaptersCollectionViewController.swift */,
+				EA22917523B79C0600097458 /* VerseCollectionViewDataSource.swift */,
 				A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */,
 				EA51EE8C23A6854500D11E65 /* VerseTableViewController.swift */,
 			);
@@ -484,6 +487,7 @@
 				7A9CDAF123746292003D4FDF /* SceneDelegate.swift in Sources */,
 				A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */,
 				A00F8C2B237DAA9F0097C968 /* BooksTableViewController.swift in Sources */,
+				EA22917623B79C0600097458 /* VerseCollectionViewDataSource.swift in Sources */,
 				A0B51404238EDA6C00FE8908 /* ChapterCollectionViewCell.swift in Sources */,
 				A00F8C25237DA88E0097C968 /* Book.swift in Sources */,
 			);
