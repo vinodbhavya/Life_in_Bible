@@ -13,11 +13,14 @@ import dbt_sdk
 class ChaptersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var chapterList: [DBTChapter] = []
-    var verseList = ["1","2","3","4","5"]
+    var verseList: [DBTVerse] = []
     var bookId: String?
     var damId: String?
     var transparentView = UIView()
     var verseCollectionViewDataSource: VerseCollectionViewDataSource?
+    
+    
+    
     
     private let reuseIdentifier = "ChapterCell"
     private let semaphore = DispatchSemaphore(value: 0)
@@ -106,17 +109,22 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         let selectedChapter = chapterList[sender.tag]
         print(selectedChapter)
         
-        getVerses(selectedChapter.damId, selectedChapter.bookId, NumberFormatter().number(from: selectedChapter.chapterId)!)
+        getVerseText(damId: selectedChapter.damId, bookId: selectedChapter.bookId, NumberFormatter().number(from: selectedChapter.chapterId)!, completion: { [weak self] (list) in
+            
+            self?.verseCollectionViewDataSource = VerseCollectionViewDataSource(list)
+            self?.verseCollectionView.delegate = self?.verseCollectionViewDataSource
+            self?.verseCollectionView.dataSource = self?.verseCollectionViewDataSource
+            
+            self?.verseCollectionView.reloadData()
+            
+        })
         
-       
-//        print("verseList Is Empty \(self.verseList)")
         
-      
         
-        verseCollectionViewDataSource = VerseCollectionViewDataSource(self.verseList)
-        verseCollectionView.delegate = verseCollectionViewDataSource
-        verseCollectionView.dataSource = verseCollectionViewDataSource
-        verseCollectionView.reloadData()
+        
+        
+        
+        
         
         
         
@@ -163,25 +171,27 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         [DBT .getLibraryChapter(withDamId: self.damId, bookId: self.bookId, success: {(chapterList) in
             
             self.chapterList = chapterList as! [DBTChapter]
+            
             self.collectionView.reloadData()
+            
+            
         }, failure: {(error) in
             print(error!)
             
         })]
     }
     
-    func getVerses(_ damId: String, _ bookId: String, _ chapterId: NSNumber) {
+    func getVerseText( damId: String, bookId: String, _ chapterId: NSNumber, completion: @escaping ([DBTVerse]) -> ()) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            DBT.getTextVerse(withDamId: damId, book: bookId, chapter: chapterId, verseStart: NSNumber(value: 1), verseEnd: NSNumber(value: 50), success: { (list) in
+                DispatchQueue.main.async {
+                    completion(list as! [DBTVerse])
+                }
+            } , failure: { (err: Any) in
+                print(err as Any)
+            })
+        }
         
-        [DBT .getTextVerse(withDamId: damId, book: bookId, chapter: chapterId, verseStart: 1 as! NSNumber, verseEnd: 50 as! NSNumber, success: assignVerse, failure: {(error) in
-            print(error!)
-            
-        })]
-        
-    }
-    
-    func assignVerse(list:[Any]?) {
-        print(list)
-//        verseList = list as! [DBTVerse]
     }
     
     

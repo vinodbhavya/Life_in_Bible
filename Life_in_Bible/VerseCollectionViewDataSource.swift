@@ -14,10 +14,10 @@ import dbt_sdk
 class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     
-    var verseList: [String] = []
+    var verseList: [DBTVerse] = []
     
     
-    init(_ verses: [String]) {
+    init(_ verses: [DBTVerse]) {
         self.verseList = verses
         
     }
@@ -43,7 +43,8 @@ class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayou
         }
         
         let titleLabel = UILabel(frame: CGRect(x: 20, y: 7.5, width: 30, height: 30))
-        titleLabel.text = verseList[indexPath.row]
+        let text = self.verseList[indexPath.row].verseId!
+        titleLabel.text = (text as! String)
         titleLabel.textColor = UIColor.black
         titleLabel.font = UIFont(name:"chalkboard SE", size: 18)
         cell.bg.image = #imageLiteral(resourceName: "tab")
