@@ -13,7 +13,7 @@ import dbt_sdk
 class ChaptersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var chapterList: [DBTChapter] = []
-    var verseList: [DBTVerse] = []
+    var versesList: [DBTVerse] = []
     var bookId: String?
     var damId: String?
     var transparentView = UIView()
@@ -45,7 +45,7 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         getChapters()
         
     }
-    
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -66,6 +66,7 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let cell = CGSize(width: 70, height: 70)
         
         return cell
@@ -97,7 +98,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         titleLabel.font = UIFont(name:"chalkboard SE", size: 19)
         cell.chapterButton.addSubview(titleLabel)
         
-        
         return cell
         
     }
@@ -118,13 +118,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
             self?.verseCollectionView.reloadData()
             
         })
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -163,7 +156,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
                         self.verseCollectionView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.collectionViewHeight)
         }, completion: nil)
         
-        
     }
     
     func getChapters() {
@@ -185,6 +177,7 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         DispatchQueue.global(qos: .userInitiated).async {
             DBT.getTextVerse(withDamId: damId, book: bookId, chapter: chapterId, verseStart: NSNumber(value: 1), verseEnd: NSNumber(value: 50), success: { (list) in
                 DispatchQueue.main.async {
+                    self.versesList = list as! [DBTVerse]
                     completion(list as! [DBTVerse])
                 }
             } , failure: { (err: Any) in
@@ -192,6 +185,29 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
             })
         }
         
+    }
+    
+
+     public func navigateToVerseCV(selectedVerse: DBTVerse)
+    {
+      
+
+        print("This is user click")
+        print(selectedVerse)
+
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+
+        guard let verseCV = mainStoryBoard.instantiateViewController(identifier: "VerseTableViewController") as? VerseTableViewController else {
+            return
+        }
+
+        if let verseViewController = verseCV as? VerseTableViewController {
+
+            verseViewController.selectedVerse = selectedVerse
+        }
+
+        present(verseCV, animated: true, completion: nil)
+
     }
     
     

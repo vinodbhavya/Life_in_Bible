@@ -23,7 +23,6 @@ class CustomButton: UIButton {
     path.fill()
     }
     
-    
     }
     
     

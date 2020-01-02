@@ -8,15 +8,23 @@
 
 import UIKit
 import dbt_sdk
-class BooksTableViewController: UITableViewController {
+class BooksTableViewController: UITableViewController, UISearchBarDelegate {
     
     var books = [DBTBook]()
     var damId: String?
     var selectedBook: DBTBook?
+    var filteredData = [DBTBook]()
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getBooks()
+        tableView.dataSource = self
+        searchBar.delegate = self
+        filteredData = books
+        
     }
     
     // MARK: - Table view data source
@@ -41,34 +49,45 @@ class BooksTableViewController: UITableViewController {
         let book = books[indexPath.row]
         cell.nameLabel.text = book.bookName
         
+//        cell.textLabel?.text = filteredData[indexPath.row]
+        
         return cell
         
     }
     
     
+    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//
+//        filteredData = searchText.isEmpty ? books : books.filter({(dataString: String) -> Bool in
+//
+//            return dataString.
+//        })
+//
+//        tableView.reloadData()
+//    }
+    
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedBook = books[indexPath.row]
-        print("assignBook")
-        //print(selectedBook)
+        
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
         guard let chapterCV = mainStoryBoard.instantiateViewController(withIdentifier: "ChaptersCollectionViewController") as? ChaptersCollectionViewController else {
         return
         }
 
-        
 
         if let chapterViewController = chapterCV as? ChaptersCollectionViewController {
             chapterViewController.damId = selectedBook!.damId
             chapterViewController.bookId = selectedBook!.bookId
         }
-        print("beforePresent")
-        print(chapterCV.bookId as Any)
-        print(chapterCV.damId as Any)
+        
         
         navigationController?.pushViewController(chapterCV, animated: true)
-        //present(chapterCV, animated: true, completion: nil)
+        
     }
     
     func getBooks()  {
@@ -83,18 +102,5 @@ class BooksTableViewController: UITableViewController {
         })]
     }
     
-  /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepare")
-        if let assignBook = selectedBook as? DBTBook {
-            print("assignBook")
-            print(assignBook)
-        }
-       // print(selectedBook)
-        if let chapterViewController = segue.destination as? ChaptersCollectionViewController {
-            chapterViewController.damId = selectedBook?.damId
-            chapterViewController.bookId = selectedBook?.bookId
-            
-        }
-    }*/
 }
 

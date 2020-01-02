@@ -12,27 +12,20 @@ import dbt_sdk
 class VerseTableViewController: UITableViewController {
     
     var verseList: [DBTVerse] = []
-    var bookId: String?
-    var chapterId: NSNumber?
-    
-    
-    var damId: String?
+    var bookId = "Gen"
+    var chapterId = NSNumber(1)
+    var selectedVerse: DBTVerse?
+    var verseId: String?
+    var damId = "ENGESVO2ET"
     
     private let reuseIdentifier = "VerseCell"
-    
-    
-    
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         getVerses()
-       
     }
     
-    
-    
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -46,22 +39,15 @@ class VerseTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of VerseTableViewCell.")
         }
         
-        
-
-        
-       
         cell.verseText.text = verseList[indexPath.row].verseText
-        
-//        cell.verseText.isScrollEnabled = false
-//        cell.verseText.isEditable = false
-        
-//        cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        
-        
-//        cell.verseText.text = verseList[indexPath.row].verseText
-//        cell.verseText.lineBreakMode = NSLineBreakMode.byWordWrapping
-//        cell.verseText.sizeToFit()
-        
+   
+        let titleLabel = UILabel(frame: CGRect(x: 16 , y: 12, width: 25, height: 25))
+//        titleLabel.text = verseList[indexPath.row].verseId
+//               titleLabel.text = chapterList[indexPath.row].chapterId
+               titleLabel.textColor = UIColor.black
+               titleLabel.font = UIFont(name:"chalkboard SE", size: 19)
+        cell.verseImageView.addSubview(titleLabel)
+//               cell.chapterButton.addSubview(titleLabel)
         
         return cell
         
@@ -72,7 +58,7 @@ class VerseTableViewController: UITableViewController {
         
         
         
-        [DBT .getTextVerse(withDamId: damId, book: bookId, chapter: chapterId, verseStart: 1 as! NSNumber, verseEnd: 50 as! NSNumber, success: {(verseList) in
+        [DBT .getTextVerse(withDamId: damId, book: bookId, chapter: chapterId, verseStart: 1 as NSNumber, verseEnd: 200 as NSNumber, success: {(verseList) in
             
             print(verseList as Any)
                        self.verseList = verseList as! [DBTVerse]

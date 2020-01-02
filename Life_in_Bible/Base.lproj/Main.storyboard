@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HJT-0I-0O5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HJT-0I-0O5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="2666.666666666667" y="164.73214285714286"/>
         </scene>
-        <!--Books Table View Controller-->
+        <!--Books-->
         <scene sceneID="N7l-V0-EfK">
             <objects>
                 <tableViewController storyboardIdentifier="BooksTableViewController" id="He7-Ev-OAv" customClass="BooksTableViewController" customModule="Life_in_Bible" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,9 +115,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="dGc-nz-FG6">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookTableViewCell" rowHeight="50" id="w66-ed-tS2" customClass="BookTableViewCell" customModule="Life_in_Bible" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w66-ed-tS2" id="y8s-5e-qmo">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="50"/>
@@ -146,8 +151,9 @@
                             <outlet property="delegate" destination="He7-Ev-OAv" id="bxB-IC-FlR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="49P-fA-a0v"/>
+                    <navigationItem key="navigationItem" title="Books" id="49P-fA-a0v"/>
                     <connections>
+                        <outlet property="searchBar" destination="dGc-nz-FG6" id="R4z-xb-XXY"/>
                         <segue destination="r4B-8P-gcx" kind="show" id="cs2-m5-7yc"/>
                     </connections>
                 </tableViewController>
@@ -155,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="3452" y="165"/>
         </scene>
-        <!--Chapters Collection View Controller-->
+        <!--Chapters-->
         <scene sceneID="Ci7-Fw-5GS">
             <objects>
                 <collectionViewController restorationIdentifier="ChaptersCollectionViewController" storyboardIdentifier="ChaptersCollectionViewController" id="r4B-8P-gcx" customClass="ChaptersCollectionViewController" customModule="Life_in_Bible" customModuleProvider="target" sceneMemberID="viewController">
@@ -178,8 +184,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwo-cc-AxZ" customClass="CustomButton" customModule="Life_in_Bible" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="15" width="70" height="70"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwo-cc-AxZ" customClass="CustomButton" customModule="Life_in_Bible" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="10" width="80" height="80"/>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -200,7 +206,7 @@
                             <outlet property="delegate" destination="r4B-8P-gcx" id="9yX-51-djp"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="pu7-KM-j9f"/>
+                    <navigationItem key="navigationItem" title="Chapters" id="pu7-KM-j9f"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGp-ps-VkZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -209,39 +215,40 @@
         <!--Verse Table View Controller-->
         <scene sceneID="xcO-NH-WVM">
             <objects>
-                <tableViewController storyboardIdentifier="VerseTableViewController" id="fpS-nS-WWT" customClass="VerseTableViewController" customModule="Life_in_Bible" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="VerseTableViewController" storyboardIdentifier="VerseTableViewController" id="fpS-nS-WWT" customClass="VerseTableViewController" customModule="Life_in_Bible" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W8Y-Co-esN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VerseCell" rowHeight="90" id="241-8L-WHV" customClass="VerseTableViewCell" customModule="Life_in_Bible" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VerseCell" rowHeight="90" id="241-8L-WHV" customClass="VerseTableViewCell" customModule="Life_in_Bible" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="241-8L-WHV" id="JtE-IH-oiv">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab" translatesAutoresizingMaskIntoConstraints="NO" id="n8I-pf-V66">
-                                            <rect key="frame" x="20" y="17" width="56" height="56"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="n8I-pf-V66" secondAttribute="height" multiplier="1:1" id="o6H-k3-HNs"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFx-Zc-7W9">
-                                            <rect key="frame" x="84" y="29" width="310" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFx-Zc-7W9">
+                                            <rect key="frame" x="84" y="36" width="318" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab" translatesAutoresizingMaskIntoConstraints="NO" id="n8I-pf-V66">
+                                            <rect key="frame" x="11" y="11" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="65" id="sfJ-4I-hwl"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="n8I-pf-V66" firstAttribute="top" secondItem="JtE-IH-oiv" secondAttribute="topMargin" constant="6" id="637-Cl-hJx"/>
-                                        <constraint firstAttribute="trailing" secondItem="WFx-Zc-7W9" secondAttribute="trailing" constant="20" id="CUP-Pc-CU3"/>
-                                        <constraint firstItem="WFx-Zc-7W9" firstAttribute="leading" secondItem="n8I-pf-V66" secondAttribute="trailing" constant="8" id="Df0-Wl-LYe"/>
-                                        <constraint firstItem="n8I-pf-V66" firstAttribute="leading" secondItem="JtE-IH-oiv" secondAttribute="leadingMargin" id="E0Q-NQ-2fO"/>
-                                        <constraint firstItem="n8I-pf-V66" firstAttribute="centerY" secondItem="JtE-IH-oiv" secondAttribute="centerY" id="iwD-2A-kSq"/>
-                                        <constraint firstItem="WFx-Zc-7W9" firstAttribute="top" secondItem="JtE-IH-oiv" secondAttribute="top" constant="29" id="wIQ-HO-26x"/>
+                                        <constraint firstItem="WFx-Zc-7W9" firstAttribute="centerY" secondItem="JtE-IH-oiv" secondAttribute="centerY" id="88I-Ge-VCL"/>
+                                        <constraint firstItem="n8I-pf-V66" firstAttribute="top" secondItem="JtE-IH-oiv" secondAttribute="topMargin" id="C75-iE-dEd"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="n8I-pf-V66" secondAttribute="bottom" constant="3" id="NMX-GR-jbI"/>
+                                        <constraint firstItem="WFx-Zc-7W9" firstAttribute="leading" secondItem="n8I-pf-V66" secondAttribute="trailing" constant="8" id="bcU-Jb-b2w"/>
+                                        <constraint firstAttribute="trailing" secondItem="WFx-Zc-7W9" secondAttribute="trailing" constant="12" id="puC-lv-9tG"/>
+                                        <constraint firstItem="WFx-Zc-7W9" firstAttribute="top" secondItem="JtE-IH-oiv" secondAttribute="topMargin" constant="25" id="r6A-un-YQp"/>
+                                        <constraint firstItem="n8I-pf-V66" firstAttribute="leading" secondItem="JtE-IH-oiv" secondAttribute="leading" constant="11" id="vfA-cg-yjs"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -250,6 +257,7 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="fpS-nS-WWT" id="5Lv-WV-wbS"/>
                             <outlet property="delegate" destination="fpS-nS-WWT" id="fSm-bY-vfh"/>
@@ -258,7 +266,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MYU-lS-107" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5162.3188405797109" y="164.73214285714286"/>
+            <point key="canvasLocation" x="5087" y="165"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BVf-4D-dIO">
@@ -276,7 +284,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Dl-lY-G6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="498"/>
+            <point key="canvasLocation" x="268" y="499"/>
         </scene>
         <!--Bible-->
         <scene sceneID="LRu-e2-gpw">
