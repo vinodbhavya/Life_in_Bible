@@ -10,10 +10,10 @@ import UIKit
 import dbt_sdk
 class BooksTableViewController: UITableViewController, UISearchBarDelegate {
     
-    var books = [DBTBook]()
+    var books: [DBTBook] = []
     var damId: String?
     var selectedBook: DBTBook?
-    var filteredData = [DBTBook]()
+    
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -23,7 +23,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
         getBooks()
         tableView.dataSource = self
         searchBar.delegate = self
-        filteredData = books
+        
         
     }
     
@@ -46,10 +46,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
         }
         
         
-        let book = books[indexPath.row]
-        cell.nameLabel.text = book.bookName
-        
-//        cell.textLabel?.text = filteredData[indexPath.row]
+        cell.nameLabel?.text = books[indexPath.row].bookName
         
         return cell
         
@@ -57,15 +54,14 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
     
     
     
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//
-//        filteredData = searchText.isEmpty ? books : books.filter({(dataString: String) -> Bool in
-//
-//            return dataString.
-//        })
-//
-//        tableView.reloadData()
-//    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        books = searchText.isEmpty ? books : books.filter({(book: DBTBook) -> Bool in
+            return  book.bookName.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        
+        tableView.reloadData()
+    }
     
     
     
@@ -74,12 +70,12 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
         selectedBook = books[indexPath.row]
         
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-
+        
         guard let chapterCV = mainStoryBoard.instantiateViewController(withIdentifier: "ChaptersCollectionViewController") as? ChaptersCollectionViewController else {
-        return
+            return
         }
-
-
+        
+        
         if let chapterViewController = chapterCV as? ChaptersCollectionViewController {
             chapterViewController.damId = selectedBook!.damId
             chapterViewController.bookId = selectedBook!.bookId
@@ -91,7 +87,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func getBooks()  {
-        [DBT .getLibraryBook(withDamId: damId, success: {(bookList) in
+       DBT.getLibraryBook(withDamId: damId, success: {(bookList) in
             
             self.books = bookList as! [DBTBook]
             self.tableView.reloadData()
@@ -99,7 +95,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
             
         }, failure: {(error) in
             print(error!)
-        })]
+        })
     }
     
 }
