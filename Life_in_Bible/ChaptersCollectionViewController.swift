@@ -45,7 +45,7 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         getChapters()
         
     }
-  
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -112,6 +112,7 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         getVerseText(damId: selectedChapter.damId, bookId: selectedChapter.bookId, NumberFormatter().number(from: selectedChapter.chapterId)!, completion: { [weak self] (list) in
             
             self?.verseCollectionViewDataSource = VerseCollectionViewDataSource(list)
+            self?.verseCollectionViewDataSource?.verseDelegate = self
             self?.verseCollectionView.delegate = self?.verseCollectionViewDataSource
             self?.verseCollectionView.dataSource = self?.verseCollectionViewDataSource
             
@@ -187,27 +188,26 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         
     }
     
+    
+}
 
-     public func navigateToVerseCV(selectedVerse: DBTVerse)
-    {
-      
-
-        print("This is user click")
-        print(selectedVerse)
-
+extension ChaptersCollectionViewController: VerseCollectionViewDelegate {
+    func userDidTap(into selectedVerse: DBTVerse) {
+        
+        print("User gona navigate from here \(selectedVerse)")
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-
+        
         guard let verseCV = mainStoryBoard.instantiateViewController(identifier: "VerseTableViewController") as? VerseTableViewController else {
             return
         }
-
+        
         if let verseViewController = verseCV as? VerseTableViewController {
-
+            
             verseViewController.selectedVerse = selectedVerse
         }
-
+        
         present(verseCV, animated: true, completion: nil)
-
+        
     }
     
     

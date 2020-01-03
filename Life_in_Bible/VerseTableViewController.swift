@@ -22,6 +22,7 @@ class VerseTableViewController: UITableViewController {
      
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("This verse is from previous controller \(selectedVerse)")
         getVerses()
     }
     

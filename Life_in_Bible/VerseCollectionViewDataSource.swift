@@ -11,11 +11,13 @@ import dbt_sdk
 
 
 
-class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     
     var verseList: [DBTVerse] = []
-//    private let navigationController: UINavigationController
+    weak var verseDelegate:VerseCollectionViewDelegate?
+    
+    
     
     init(_ verses: [DBTVerse]) {
         self.verseList = verses
@@ -64,42 +66,19 @@ class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayou
     
     
     
-   @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-      {
-          let tappedImage = tapGestureRecognizer.view as! UIImageView
-
-          let selectedVerse = self.verseList[tappedImage.tag]
-
-      let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-
-             guard let verseCV = mainStoryBoard.instantiateViewController(identifier: "VerseTableViewController") as? VerseTableViewController else {
-                 return
-             }
-
-             if let verseViewController = verseCV as? VerseTableViewController {
-
-                 verseViewController.selectedVerse = selectedVerse
-             }
-
-//       let window = UIApplication.shared.keyWindow
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        print("user tapped")
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
         
-
-        let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
-        
-        let chapterCV = ChaptersCollectionViewController.init(collectionViewLayout: layout)
-        chapterCV.navigateToVerseCV(selectedVerse: selectedVerse)
-        
-//    let navigationCV = UINavigationController(rootViewController: chapterCV)
-////        window?.rootViewController = navigationCV
-//        window?.makeKeyAndVisible()
-//        navigationCV.present(verseCV, animated: true, completion: nil)
-//
+        let selectedVerse = self.verseList[tappedImage.tag]
+        verseDelegate?.userDidTap(into: selectedVerse)
     }
-    
     
 }
 
-
-
+protocol VerseCollectionViewDelegate: class {
+    func userDidTap(into selectedVerse: DBTVerse)
+}
 
 

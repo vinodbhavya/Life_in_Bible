@@ -13,6 +13,7 @@ class VerseCollectionViewCell: UICollectionViewCell {
   var bg: UIImageView = {
     let iv = UIImageView(frame: CGRect(x: 10, y: 15, width: 50, height: 50))
     iv.translatesAutoresizingMaskIntoConstraints = false
+    iv.isUserInteractionEnabled = true
     iv.contentMode = .scaleAspectFill
     return iv
     }()
