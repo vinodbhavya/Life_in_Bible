@@ -68,7 +68,7 @@ class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayou
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-        print("user tapped")
+       
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         
         let selectedVerse = self.verseList[tappedImage.tag]

@@ -117,7 +117,12 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
             self?.verseCollectionViewDataSource?.verseDelegate = self
             self?.verseCollectionView.delegate = self?.verseCollectionViewDataSource
             self?.verseCollectionView.dataSource = self?.verseCollectionViewDataSource
-            self?.collectionViewHeight = CGFloat((list.count))/5 * 85
+           
+           
+           var count = ceil(Double(list.count ) / 5.0)
+            count = count >= 7.0 ? 7.0 : count
+            
+            self?.collectionViewHeight = CGFloat(count) * 85
             self?.verseCollectionView.reloadData()
             
             let screenSize = UIScreen.main.bounds.size

@@ -14,8 +14,4 @@ class ChapterCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var chapterButton: CustomButton!
     
     
-    
-    
-    
-
 }
