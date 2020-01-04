@@ -12,11 +12,10 @@ import dbt_sdk
 class VerseTableViewController: UITableViewController {
     
     var verseList: [DBTVerse] = []
-    var bookId = "Gen"
-    var chapterId = NSNumber(1)
+    
+    var damId: String?
     var selectedVerse: DBTVerse?
-    var verseId: String?
-    var damId = "ENGESVO2ET"
+   
     
     private let reuseIdentifier = "VerseCell"
     
@@ -52,14 +51,14 @@ class VerseTableViewController: UITableViewController {
             
         }
         
-        
-        
         cell.verseText.text = verseList[indexPath.row].verseText
         
-        let titleLabel = UILabel(frame: CGRect(x: 16 , y: 12, width: 25, height: 25))
-        
+       let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
+        titleLabel.textAlignment = .center
+        let text = self.verseList[indexPath.row].verseId!
+        titleLabel.text = (text as! String)
         titleLabel.textColor = UIColor.black
-        titleLabel.font = UIFont(name:"chalkboard SE", size: 19)
+        titleLabel.font = UIFont(name:"chalkboard SE", size: 18)
         cell.verseImageView.addSubview(titleLabel)
         
         return cell
@@ -79,7 +78,7 @@ class VerseTableViewController: UITableViewController {
     func getVerses() {
         
         
-        DBT .getTextVerse(withDamId: damId, book: bookId, chapter: chapterId, verseStart: 1 as NSNumber, verseEnd: 200 as NSNumber, success: {(verseList) in
+        DBT .getTextVerse(withDamId: damId, book: selectedVerse?.bookId, chapter: selectedVerse?.chapterId, verseStart: 1 as NSNumber, verseEnd: 200 as NSNumber, success: {(verseList) in
             
             self.verseList = verseList as! [DBTVerse]
             self.tableView.reloadData()
