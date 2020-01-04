@@ -26,7 +26,7 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
     private let semaphore = DispatchSemaphore(value: 0)
     private let queue = DispatchQueue.global()
     
-    var collectionViewHeight: CGFloat = 9 * 50
+    var collectionViewHeight: CGFloat = 7 * 85
     
     
     
@@ -80,19 +80,13 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ChapterCollectionViewCell
         
-        
         cell.chapterButton.tag = indexPath.row
         cell.chapterButton.isUserInteractionEnabled = true
-        
         cell.chapterButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         
-        
-        //        Note: we need to calculate left margin(x) label dynamically
-        //        1. find the length of character
-        //        2. to calculate left margin based on length
-        
-        let titleLabel = UILabel(frame: CGRect(x: 16 , y: 12, width: 25, height: 25))
+        titleLabel.textAlignment = .center
         titleLabel.text = chapterList[indexPath.row].chapterId
         titleLabel.textColor = UIColor.black
         titleLabel.font = UIFont(name:"chalkboard SE", size: 19)
@@ -107,20 +101,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
     {
         
         let selectedChapter = chapterList[sender.tag]
-        print(selectedChapter)
-        
-        getVerseText(damId: selectedChapter.damId, bookId: selectedChapter.bookId, NumberFormatter().number(from: selectedChapter.chapterId)!, completion: { [weak self] (list) in
-            
-            self?.verseCollectionViewDataSource = VerseCollectionViewDataSource(list)
-            self?.verseCollectionViewDataSource?.verseDelegate = self
-            self?.verseCollectionView.delegate = self?.verseCollectionViewDataSource
-            self?.verseCollectionView.dataSource = self?.verseCollectionViewDataSource
-            
-            self?.verseCollectionView.reloadData()
-            
-        })
-        
-        
         
         let window = UIApplication.shared.keyWindow
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
@@ -130,18 +110,31 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onClickTransperentView))
         transparentView.addGestureRecognizer(tapGesture)
         
-        let screenSize = UIScreen.main.bounds.size
-        //        verseCollectionView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: collectionViewHeight)
-        window?.addSubview(verseCollectionView)
         
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0,
-                       initialSpringVelocity: 1.0, options: .curveEaseInOut,
-                       animations: {
-                        self.transparentView.alpha = 0.5
-                        self.verseCollectionView.frame = CGRect(x: 0, y: screenSize.height - self.collectionViewHeight, width: screenSize.width, height: self.collectionViewHeight)
-        }, completion: nil)
         
+        getVerseText(damId: selectedChapter.damId, bookId: selectedChapter.bookId, NumberFormatter().number(from: selectedChapter.chapterId)!, completion: { [weak self] (list) in
+            
+            self?.verseCollectionViewDataSource = VerseCollectionViewDataSource(list)
+            self?.verseCollectionViewDataSource?.verseDelegate = self
+            self?.verseCollectionView.delegate = self?.verseCollectionViewDataSource
+            self?.verseCollectionView.dataSource = self?.verseCollectionViewDataSource
+            self?.collectionViewHeight = CGFloat((list.count))/5 * 85
+            self?.verseCollectionView.reloadData()
+            
+            let screenSize = UIScreen.main.bounds.size
+            self!.verseCollectionView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self!.collectionViewHeight)
+            window?.addSubview(self!.verseCollectionView)
+            
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0,
+                           initialSpringVelocity: 1.0, options: .curveEaseInOut,
+                           animations: {
+                            self!.transparentView.alpha = 0.5
+                            self!.verseCollectionView.frame = CGRect(x: 0, y: screenSize.height - self!.collectionViewHeight, width: screenSize.width, height: self!.collectionViewHeight)
+            }, completion: nil)
+            
+        })
         
         
     }
@@ -194,15 +187,12 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
 extension ChaptersCollectionViewController: VerseCollectionViewDelegate {
     func userDidTap(into selectedVerse: DBTVerse) {
         
-        print("User gona navigate from here \(selectedVerse)")
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
         guard let verseCV = mainStoryBoard.instantiateViewController(identifier: "VerseTableViewController") as? VerseTableViewController else {
             return
         }
         
         if let verseViewController = verseCV as? VerseTableViewController {
-            
             verseViewController.selectedVerse = selectedVerse
         }
         
