@@ -111,8 +111,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         transparentView.addGestureRecognizer(tapGesture)
         
         
-        
-        
         getVerseText(damId: selectedChapter.damId, bookId: selectedChapter.bookId, NumberFormatter().number(from: selectedChapter.chapterId)!, completion: { [weak self] (list) in
             
             self?.verseCollectionViewDataSource = VerseCollectionViewDataSource(list)
@@ -187,6 +185,10 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
 extension ChaptersCollectionViewController: VerseCollectionViewDelegate {
     func userDidTap(into selectedVerse: DBTVerse) {
         
+        let screenSize = UIScreen.main.bounds.size
+        self.transparentView.alpha = 0
+        self.verseCollectionView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.collectionViewHeight)
+        
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let verseCV = mainStoryBoard.instantiateViewController(identifier: "VerseTableViewController") as? VerseTableViewController else {
             return
@@ -196,7 +198,8 @@ extension ChaptersCollectionViewController: VerseCollectionViewDelegate {
             verseViewController.selectedVerse = selectedVerse
         }
         
-        present(verseCV, animated: true, completion: nil)
+        
+        navigationController?.pushViewController(verseCV, animated: true)
         
     }
     
