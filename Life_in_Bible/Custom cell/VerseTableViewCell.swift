@@ -13,6 +13,8 @@ class VerseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var verseImageView: UIImageView!
     
+    
+   
     @IBOutlet weak var verseText: UILabel!
     
     

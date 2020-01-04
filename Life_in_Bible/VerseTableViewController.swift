@@ -19,17 +19,24 @@ class VerseTableViewController: UITableViewController {
     var damId = "ENGESVO2ET"
     
     private let reuseIdentifier = "VerseCell"
-     
+    
     override func viewDidLoad() {
+        self.tableView.dataSource = self
         super.viewDidLoad()
+        
         print("This verse is from previous controller \(selectedVerse)")
+        let screenSize = UIScreen.main.bounds.size
+       
+//       self.tableView.frame = CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height)
         getVerses()
     }
     
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return verseList.count
@@ -41,14 +48,12 @@ class VerseTableViewController: UITableViewController {
         }
         
         cell.verseText.text = verseList[indexPath.row].verseText
-   
+        
         let titleLabel = UILabel(frame: CGRect(x: 16 , y: 12, width: 25, height: 25))
-//        titleLabel.text = verseList[indexPath.row].verseId
-//               titleLabel.text = chapterList[indexPath.row].chapterId
-               titleLabel.textColor = UIColor.black
-               titleLabel.font = UIFont(name:"chalkboard SE", size: 19)
+        
+        titleLabel.textColor = UIColor.black
+        titleLabel.font = UIFont(name:"chalkboard SE", size: 19)
         cell.verseImageView.addSubview(titleLabel)
-//               cell.chapterButton.addSubview(titleLabel)
         
         return cell
         
@@ -62,13 +67,13 @@ class VerseTableViewController: UITableViewController {
         [DBT .getTextVerse(withDamId: damId, book: bookId, chapter: chapterId, verseStart: 1 as NSNumber, verseEnd: 200 as NSNumber, success: {(verseList) in
             
             print(verseList as Any)
-                       self.verseList = verseList as! [DBTVerse]
-                        self.tableView.reloadData()
+            self.verseList = verseList as! [DBTVerse]
+            self.tableView.reloadData()
         }, failure: {(error) in
             print(error!)
             
         })]
         
     }
-   
+    
 }
