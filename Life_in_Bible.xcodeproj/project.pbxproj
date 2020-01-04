@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		12A9A69D8B38EF81C1887F4C /* Pods_Life_in_Bible.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E38FF65232D10CB68BBE4C75 /* Pods_Life_in_Bible.framework */; };
 		6324F1E305BEC872EAA9B66E /* Pods_Life_in_BibleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F633D30D5038BEA1DCD222B2 /* Pods_Life_in_BibleTests.framework */; };
+		7A15898F23BE429900F5EFF1 /* Church.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A15898E23BE429900F5EFF1 /* Church.swift */; };
+		7A15899123BE439C00F5EFF1 /* Churches.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A15899023BE439C00F5EFF1 /* Churches.json */; };
+		7A15899323BE43F900F5EFF1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A15899223BE43F900F5EFF1 /* SwiftyJSON.swift */; };
 		7A9CDAEF23746292003D4FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CDAEE23746292003D4FDF /* AppDelegate.swift */; };
 		7A9CDAF123746292003D4FDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CDAF023746292003D4FDF /* SceneDelegate.swift */; };
 		7A9CDAF623746292003D4FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CDAF423746292003D4FDF /* Main.storyboard */; };
@@ -56,6 +59,9 @@
 		5B41A32F69DB19C19107521F /* Pods-Life_in_Bible.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life_in_Bible.release.xcconfig"; path = "Target Support Files/Pods-Life_in_Bible/Pods-Life_in_Bible.release.xcconfig"; sourceTree = "<group>"; };
 		6A7C083A80151F6A3C759F37 /* Pods-Life_in_Bible.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life_in_Bible.debug.xcconfig"; path = "Target Support Files/Pods-Life_in_Bible/Pods-Life_in_Bible.debug.xcconfig"; sourceTree = "<group>"; };
 		777D1FACFC3BF3B0AF1F25DE /* Pods-Life_in_Bible-Life_in_BibleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life_in_Bible-Life_in_BibleUITests.debug.xcconfig"; path = "Target Support Files/Pods-Life_in_Bible-Life_in_BibleUITests/Pods-Life_in_Bible-Life_in_BibleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A15898E23BE429900F5EFF1 /* Church.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Church.swift; sourceTree = "<group>"; };
+		7A15899023BE439C00F5EFF1 /* Churches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Churches.json; sourceTree = "<group>"; };
+		7A15899223BE43F900F5EFF1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		7A9CDAEB23746292003D4FDF /* Life_in_Bible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Life_in_Bible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9CDAEE23746292003D4FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A9CDAF023746292003D4FDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +163,8 @@
 			children = (
 				7A9CDAEE23746292003D4FDF /* AppDelegate.swift */,
 				7A9CDAF023746292003D4FDF /* SceneDelegate.swift */,
+				7A15899023BE439C00F5EFF1 /* Churches.json */,
+				7A15899223BE43F900F5EFF1 /* SwiftyJSON.swift */,
 				A05BFF19238F39960050C59D /* Custom cell */,
 				A00F8C23237DA8110097C968 /* Model */,
 				A0D62036237B1C6700F67BBB /* Controllers */,
@@ -206,6 +214,7 @@
 				A00F8C24237DA88E0097C968 /* Book.swift */,
 				A00F8C26237DA99E0097C968 /* Chapters.swift */,
 				A00F8C28237DA9BD0097C968 /* Verses.swift */,
+				7A15898E23BE429900F5EFF1 /* Church.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,6 +354,7 @@
 			files = (
 				7A9CDAFB23746294003D4FDF /* LaunchScreen.storyboard in Resources */,
 				A00F8C1E237C4E2E0097C968 /* IDETemplate.plist in Resources */,
+				7A15899123BE439C00F5EFF1 /* Churches.json in Resources */,
 				7A9CDAF823746294003D4FDF /* Assets.xcassets in Resources */,
 				7A9CDAF623746292003D4FDF /* Main.storyboard in Resources */,
 			);
@@ -480,6 +490,7 @@
 				EA7216D923B16B9900C24BCF /* VerseCollectionViewCell.swift in Sources */,
 				EAE1733A23A127B200409AB5 /* CustomButton.swift in Sources */,
 				A05BFF1D23901FB50050C59D /* BookTableViewCell.swift in Sources */,
+				7A15898F23BE429900F5EFF1 /* Church.swift in Sources */,
 				EA51EE8B23A6838500D11E65 /* VerseTableViewCell.swift in Sources */,
 				EA51EE8D23A6854500D11E65 /* VerseTableViewController.swift in Sources */,
 				A00F8C29237DA9BD0097C968 /* Verses.swift in Sources */,
@@ -488,6 +499,7 @@
 				A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */,
 				A00F8C2B237DAA9F0097C968 /* BooksTableViewController.swift in Sources */,
 				EA22917623B79C0600097458 /* VerseCollectionViewDataSource.swift in Sources */,
+				7A15899323BE43F900F5EFF1 /* SwiftyJSON.swift in Sources */,
 				A0B51404238EDA6C00FE8908 /* ChapterCollectionViewCell.swift in Sources */,
 				A00F8C25237DA88E0097C968 /* Book.swift in Sources */,
 			);
