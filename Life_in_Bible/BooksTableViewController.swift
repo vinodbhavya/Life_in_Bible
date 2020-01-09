@@ -13,7 +13,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
     var books: [DBTBook] = []
     var damId: String?
     var selectedBook: DBTBook?
-    
+    var filterBooks: [DBTBook] = []
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -34,7 +34,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books.count
+        return filterBooks.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,20 +46,19 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
         }
         
         
-        cell.nameLabel?.text = books[indexPath.row].bookName
+        cell.nameLabel?.text = filterBooks[indexPath.row].bookName
         
         return cell
         
     }
     
     
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        books = searchText.isEmpty ? books : books.filter({(book: DBTBook) -> Bool in
+        filterBooks = searchText.isEmpty ? books : books.filter({(book: DBTBook) -> Bool in
             return  book.bookName.range(of: searchText, options: .caseInsensitive) != nil
         })
-        
+      
         tableView.reloadData()
     }
     
@@ -67,7 +66,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        selectedBook = books[indexPath.row]
+        selectedBook = filterBooks[indexPath.row]
         
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
@@ -87,9 +86,10 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func getBooks()  {
-       DBT.getLibraryBook(withDamId: damId, success: {(bookList) in
+        DBT.getLibraryBook(withDamId: damId, success: {(bookList) in
             
             self.books = bookList as! [DBTBook]
+            self.filterBooks = self.books
             self.tableView.reloadData()
             
             
