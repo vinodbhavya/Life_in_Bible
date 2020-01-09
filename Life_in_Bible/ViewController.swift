@@ -10,8 +10,7 @@ import UIKit
 import dbt_sdk
 
 class ViewController: UIViewController {
-    
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         

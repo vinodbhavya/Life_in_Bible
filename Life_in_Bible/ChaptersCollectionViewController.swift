@@ -200,7 +200,8 @@ extension ChaptersCollectionViewController: VerseCollectionViewDelegate {
         }
         
         if let verseViewController = verseCV as? VerseTableViewController {
-            verseViewController.selectedVerse = selectedVerse
+             verseViewController.selectedVerse = selectedVerse
+            verseViewController.damId = self.damId
         }
         
         

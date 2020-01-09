@@ -16,7 +16,6 @@ class VerseTableViewController: UITableViewController {
     var damId: String?
     var selectedVerse: DBTVerse?
    
-    
     private let reuseIdentifier = "VerseCell"
     
     override func viewDidLoad() {
@@ -28,13 +27,10 @@ class VerseTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    
-    
+     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return verseList.count
     }
