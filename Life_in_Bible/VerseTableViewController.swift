@@ -8,29 +8,37 @@
 
 import UIKit
 import dbt_sdk
+import Foundation
 
 class VerseTableViewController: UITableViewController {
     
     var verseList: [DBTVerse] = []
-    
     var damId: String?
     var selectedVerse: DBTVerse?
-   
+    
+    
     private let reuseIdentifier = "VerseCell"
     
     override func viewDidLoad() {
-        
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        
         getVerses()
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let verseId = selectedVerse!.verseId
+        let verseIndex:Int? = (verseId != nil) ? Int(verseId!) : nil
+        let index: Int = verseIndex! > 0 ? verseIndex! - 1 : 0
+        let indexPath = IndexPath(row: index, section: 0)
+        self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)
+        
+    }
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-     
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return verseList.count
     }
@@ -40,16 +48,9 @@ class VerseTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of VerseTableViewCell.")
         }
         
-       
-        
-        if (selectedVerse?.verseId === self.verseList[indexPath.row].verseId){
-            cell.contentView.backgroundColor = UIColor.gray
-            
-        }
-        
         cell.verseText.text = verseList[indexPath.row].verseText
         
-       let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
         titleLabel.textAlignment = .center
         let text = self.verseList[indexPath.row].verseId!
         titleLabel.text = (text as! String)
@@ -61,18 +62,7 @@ class VerseTableViewController: UITableViewController {
         
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-        selectedCell.contentView.backgroundColor = UIColor.gray
-    }
-    
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-        selectedCell.contentView.backgroundColor = UIColor.white
-    }
-    
     func getVerses() {
-        
         
         DBT .getTextVerse(withDamId: damId, book: selectedVerse?.bookId, chapter: selectedVerse?.chapterId, verseStart: 1 as NSNumber, verseEnd: 200 as NSNumber, success: {(verseList) in
             
