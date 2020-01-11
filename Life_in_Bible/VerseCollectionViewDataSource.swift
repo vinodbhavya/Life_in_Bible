@@ -31,6 +31,30 @@ class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayou
         return verseList.count
     }
     
+    //Header Size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 90)
+    }
+    
+    
+    //Header Cell
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if (kind == UICollectionView.elementKindSectionHeader) {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HVerseCollectionReusableView.reuseIdentifier, for: indexPath) as! HVerseCollectionReusableView
+            let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: 75))
+            titleLabel.text = "Select Verse"
+            titleLabel.textColor = UIColor.black
+            titleLabel.font = UIFont(name:"chalkboard SE", size: 18)
+            titleLabel.textAlignment = .center
+            titleLabel.backgroundColor = UIColor.init(red: 232/255, green: 233/255, blue: 237/255, alpha: 1)
+            
+            headerView.addSubview(titleLabel)
+            return headerView
+        }
+        fatalError()
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VerseCell", for: indexPath) as? VerseCollectionViewCell else {
