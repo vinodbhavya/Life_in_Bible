@@ -10,13 +10,9 @@ import UIKit
 
 class VerseTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var btn: UIButton!
     
-    @IBOutlet weak var verseImageView: UIImageView!
-    
-    
-   
     @IBOutlet weak var verseText: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

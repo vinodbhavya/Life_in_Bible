@@ -9,25 +9,18 @@
 import UIKit
 import dbt_sdk
 
-
-
 class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    
     
     var verseList: [DBTVerse] = []
     weak var verseDelegate:VerseCollectionViewDelegate?
     
-    
-    
     init(_ verses: [DBTVerse]) {
         self.verseList = verses
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cell = CGSize(width: 70, height: 70)
         return cell
-        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -44,34 +37,18 @@ class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayou
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
         
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        cell.bg.isUserInteractionEnabled = true
-        cell.bg.addGestureRecognizer(tapGestureRecognizer)
-        cell.bg.tag = indexPath.row
-        
-        
-        let titleLabel = UILabel(frame: CGRect(x: 20, y: 7.5, width: 30, height: 30))
+        cell.btn.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         let text = self.verseList[indexPath.row].verseId!
-        titleLabel.text = (text as! String)
-        titleLabel.textColor = UIColor.black
-        titleLabel.font = UIFont(name:"chalkboard SE", size: 18)
-        cell.bg.image = #imageLiteral(resourceName: "tab")
-        cell.bg.addSubview(titleLabel)
-        
+        cell.btn.setTitle((text as! String), for: .normal)
+        cell.btn.tag = indexPath.row
         
         return cell
         
     }
     
-    
-    
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    @objc func buttonTapped(_ sender: UIButton)
     {
-       
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
-        
-        let selectedVerse = self.verseList[tappedImage.tag]
+        let selectedVerse = self.verseList[sender.tag]
         verseDelegate?.userDidTap(into: selectedVerse)
     }
     

@@ -10,22 +10,20 @@ import UIKit
 
 class VerseCollectionViewCell: UICollectionViewCell {
     
-  var bg: UIImageView = {
-    let iv = UIImageView(frame: CGRect(x: 10, y: 15, width: 50, height: 50))
-    iv.translatesAutoresizingMaskIntoConstraints = false
-    iv.isUserInteractionEnabled = true
-    iv.contentMode = .scaleAspectFill
-    return iv
+    lazy var btn: UIButton = {
+        let button = UIButton(frame: CGRect(x: 10, y: 15, width: 50, height: 50))
+        button.backgroundColor = .green
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = button.frame.width/2.0
+        return button
     }()
-
+    
     override init(frame: CGRect) {
-    super.init(frame: .zero)
-    contentView.addSubview(bg)
-
-
+        super.init(frame: .zero)
+        contentView.addSubview(btn)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+        fatalError("init(coder:) has not been implemented")
     }
 }

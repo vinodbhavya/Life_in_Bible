@@ -34,7 +34,6 @@ class VerseTableViewController: UITableViewController {
         
     }
     
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -49,16 +48,15 @@ class VerseTableViewController: UITableViewController {
         }
         
         cell.verseText.text = verseList[indexPath.row].verseText
-        
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
-        titleLabel.textAlignment = .center
         let text = self.verseList[indexPath.row].verseId!
-        titleLabel.text = (text as! String)
-        titleLabel.textColor = UIColor.black
-        titleLabel.font = UIFont(name:"chalkboard SE", size: 18)
-        cell.verseImageView.addSubview(titleLabel)
+        cell.btn.frame = CGRect(x: 10, y: 15, width: 65, height: 65)
+        cell.btn.setTitleColor(.black, for: .normal)
+        cell.btn.layer.masksToBounds = true
+        cell.btn.layer.cornerRadius = 33.0
+        cell.btn.setTitle((text as! String), for: .normal)
+        cell.btn.backgroundColor = .gray
         
-        return cell
+         return cell
         
     }
     
