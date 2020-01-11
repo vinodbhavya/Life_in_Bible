@@ -21,12 +21,12 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "OldTestamentSegue") {
             if let viewcontroller = segue.destination as? BooksTableViewController {
-                viewcontroller.damId = "ENGESVO2ET"
+                viewcontroller.damId = AppConstants.otTextDamId
                 
             }
         } else if(segue.identifier == "NewTestamentSegue") {
             if let viewcontroller = segue.destination as? BooksTableViewController {
-                viewcontroller.damId = "ENGESVN2ET"
+                viewcontroller.damId = AppConstants.ntTextDamId
             }
         }
         

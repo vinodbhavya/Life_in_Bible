@@ -31,6 +31,9 @@
 		A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */; };
 		DB246D607D70CB58CA2B3234 /* Pods_Life_in_Bible_Life_in_BibleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4EAA7701907B970FD7724C /* Pods_Life_in_Bible_Life_in_BibleUITests.framework */; };
 		EA22917623B79C0600097458 /* VerseCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22917523B79C0600097458 /* VerseCollectionViewDataSource.swift */; };
+		EA4F169923CA3561006F7CD4 /* HVerseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4F169823CA3561006F7CD4 /* HVerseCollectionReusableView.swift */; };
+		EA4F169B23CA4D0C006F7CD4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4F169A23CA4D0B006F7CD4 /* AVFoundation.framework */; };
+		EA4F169D23CA4EBF006F7CD4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4F169C23CA4EBF006F7CD4 /* AppConstants.swift */; };
 		EA51EE8B23A6838500D11E65 /* VerseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51EE8A23A6838500D11E65 /* VerseTableViewCell.swift */; };
 		EA51EE8D23A6854500D11E65 /* VerseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51EE8C23A6854500D11E65 /* VerseTableViewController.swift */; };
 		EA7216D923B16B9900C24BCF /* VerseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7216D823B16B9900C24BCF /* VerseCollectionViewCell.swift */; };
@@ -88,6 +91,9 @@
 		A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxViewController.swift; sourceTree = "<group>"; };
 		E38FF65232D10CB68BBE4C75 /* Pods_Life_in_Bible.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Life_in_Bible.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA22917523B79C0600097458 /* VerseCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		EA4F169823CA3561006F7CD4 /* HVerseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HVerseCollectionReusableView.swift; sourceTree = "<group>"; };
+		EA4F169A23CA4D0B006F7CD4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EA4F169C23CA4EBF006F7CD4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		EA51EE8A23A6838500D11E65 /* VerseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseTableViewCell.swift; sourceTree = "<group>"; };
 		EA51EE8C23A6854500D11E65 /* VerseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseTableViewController.swift; sourceTree = "<group>"; };
 		EA7216D823B16B9900C24BCF /* VerseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4F169B23CA4D0C006F7CD4 /* AVFoundation.framework in Frameworks */,
 				12A9A69D8B38EF81C1887F4C /* Pods_Life_in_Bible.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +135,7 @@
 		3B4EFB5839522D6B7A08D118 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA4F169A23CA4D0B006F7CD4 /* AVFoundation.framework */,
 				E38FF65232D10CB68BBE4C75 /* Pods_Life_in_Bible.framework */,
 				4E4EAA7701907B970FD7724C /* Pods_Life_in_Bible_Life_in_BibleUITests.framework */,
 				F633D30D5038BEA1DCD222B2 /* Pods_Life_in_BibleTests.framework */,
@@ -165,11 +173,11 @@
 				7A9CDAF023746292003D4FDF /* SceneDelegate.swift */,
 				7A15899023BE439C00F5EFF1 /* Churches.json */,
 				7A15899223BE43F900F5EFF1 /* SwiftyJSON.swift */,
+				EA4F169C23CA4EBF006F7CD4 /* AppConstants.swift */,
 				A05BFF19238F39960050C59D /* Custom cell */,
 				A00F8C23237DA8110097C968 /* Model */,
 				A0D62036237B1C6700F67BBB /* Controllers */,
 				7A9CDAF423746292003D4FDF /* Main.storyboard */,
-				EAE1733923A127B200409AB5 /* CustomButton.swift */,
 				7A9CDAF723746294003D4FDF /* Assets.xcassets */,
 				7A9CDAF923746294003D4FDF /* LaunchScreen.storyboard */,
 				7A9CDAFC23746294003D4FDF /* Info.plist */,
@@ -222,10 +230,12 @@
 		A05BFF19238F39960050C59D /* Custom cell */ = {
 			isa = PBXGroup;
 			children = (
+				EA4F169823CA3561006F7CD4 /* HVerseCollectionReusableView.swift */,
 				A05BFF1C23901FB50050C59D /* BookTableViewCell.swift */,
 				A0B51403238EDA6C00FE8908 /* ChapterCollectionViewCell.swift */,
 				EA51EE8A23A6838500D11E65 /* VerseTableViewCell.swift */,
 				EA7216D823B16B9900C24BCF /* VerseCollectionViewCell.swift */,
+				EAE1733923A127B200409AB5 /* CustomButton.swift */,
 			);
 			path = "Custom cell";
 			sourceTree = "<group>";
@@ -496,12 +506,14 @@
 				A00F8C29237DA9BD0097C968 /* Verses.swift in Sources */,
 				7A9CDAEF23746292003D4FDF /* AppDelegate.swift in Sources */,
 				7A9CDAF123746292003D4FDF /* SceneDelegate.swift in Sources */,
+				EA4F169923CA3561006F7CD4 /* HVerseCollectionReusableView.swift in Sources */,
 				A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */,
 				A00F8C2B237DAA9F0097C968 /* BooksTableViewController.swift in Sources */,
 				EA22917623B79C0600097458 /* VerseCollectionViewDataSource.swift in Sources */,
 				7A15899323BE43F900F5EFF1 /* SwiftyJSON.swift in Sources */,
 				A0B51404238EDA6C00FE8908 /* ChapterCollectionViewCell.swift in Sources */,
 				A00F8C25237DA88E0097C968 /* Book.swift in Sources */,
+				EA4F169D23CA4EBF006F7CD4 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
