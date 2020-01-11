@@ -19,9 +19,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
     var transparentView = UIView()
     var verseCollectionViewDataSource: VerseCollectionViewDataSource?
     
-    
-    
-    
     private let reuseIdentifier = "ChapterCell"
     private let semaphore = DispatchSemaphore(value: 0)
     private let queue = DispatchQueue.global()
@@ -34,6 +31,8 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(HVerseCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HVerseCollectionReusableView.reuseIdentifier)
+        
         cv.register(VerseCollectionViewCell.self, forCellWithReuseIdentifier: "VerseCell")
         cv.backgroundColor = .white
         return cv
@@ -49,9 +48,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
-    // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         
@@ -117,12 +113,12 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
             self?.verseCollectionViewDataSource?.verseDelegate = self
             self?.verseCollectionView.delegate = self?.verseCollectionViewDataSource
             self?.verseCollectionView.dataSource = self?.verseCollectionViewDataSource
-           
-           
-           var count = ceil(Double(list.count ) / 5.0)
+            
+            
+            var count = ceil(Double(list.count ) / 5.0)
             count = count >= 7.0 ? 7.0 : count
             
-            self?.collectionViewHeight = CGFloat(count) * 85
+            self?.collectionViewHeight = (CGFloat(count) * 85) + 75
             self?.verseCollectionView.reloadData()
             
             let screenSize = UIScreen.main.bounds.size
@@ -200,7 +196,7 @@ extension ChaptersCollectionViewController: VerseCollectionViewDelegate {
         }
         
         if let verseViewController = verseCV as? VerseTableViewController {
-             verseViewController.selectedVerse = selectedVerse
+            verseViewController.selectedVerse = selectedVerse
             verseViewController.damId = self.damId
         }
         
