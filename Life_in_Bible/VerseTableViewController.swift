@@ -27,10 +27,39 @@ class VerseTableViewController: UITableViewController {
         super.viewDidLoad()
         
         let audioDamId = damId != AppConstants.otTextDamId ? AppConstants.ntAudioDamId : AppConstants.otAudioDamId
-       
         
-        // this is for test purpose
+//        let button: UIButton = UIButton(type: UIButton.ButtonType.custom) as! UIButton
+//       button.frame = CGRect(x: 10, y: 15, width: 50, height: 50)
+//        button.setImage(UIImage(named: "music.note.list"), for: .normal)
+//        button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+//       let barButton = UIBarButtonItem(customView: button)
+        
+//        navigationItem.rightBarButtonItem = barButton
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        
+        var items = [UIBarButtonItem]()
+        items.append(
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        )
+        items.append(
+            UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(play))
+        )
+        
+        self.toolbarItems = items
+        self.navigationController?.setToolbarHidden(true, animated: false)
+        
+    }
+    
+    @objc func play() {
+        
+        let audioDamId = damId != AppConstants.otTextDamId ? AppConstants.ntAudioDamId : AppConstants.otAudioDamId
         getAudioPath(damId: audioDamId, bookId: selectedVerse!.bookId, selectedVerse!.chapterId)
+        
+    }
+    
+    @objc func addTapped() {
+        self.navigationController?.setToolbarHidden(false, animated: true)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -70,6 +99,12 @@ class VerseTableViewController: UITableViewController {
         
     }
     
+    
+    @IBAction func volumeSlider(_ sender: UISlider) {
+    }
+    
+    
+    
     func getVerses() {
         
         DBT .getTextVerse(withDamId: damId, book: selectedVerse?.bookId, chapter: selectedVerse?.chapterId, verseStart: 1 as NSNumber, verseEnd: 200 as NSNumber, success: {(verseList) in
@@ -107,10 +142,8 @@ class VerseTableViewController: UITableViewController {
             let soundData = try Data(contentsOf: url)
             self.player = try AVAudioPlayer(data: soundData)
             self.player?.prepareToPlay()
-            // self.player?.volume = 0.7
-            // self.player?.delegate = self as? AVAudioPlayerDelegate
             self.player?.play()
-            // self.player?.pause()
+            
             
         } catch {
             print(error)
