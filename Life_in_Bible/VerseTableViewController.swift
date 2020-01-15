@@ -25,16 +25,27 @@ class VerseTableViewController: UITableViewController {
     override func viewDidLoad() {
         getVerses()
         super.viewDidLoad()
+        createNavBar()
+        createToolbar()
+    }
+    
+    private func createNavBar() {
+        let btnMusic = UIButton(type: .custom)
+        btnMusic.setImage(#imageLiteral(resourceName: "audio"), for: .normal)
+        btnMusic.setTitle("", for: .normal)
+        btnMusic.setTitleColor(btnMusic.tintColor, for: .normal)
+        btnMusic.addTarget(self, action: #selector(showToolBar), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btnMusic)
         
-        let audioDamId = damId != AppConstants.otTextDamId ? AppConstants.ntAudioDamId : AppConstants.otAudioDamId
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+    }
+    
+    private func createToolbar() {
         let slider = UISlider()
         slider.frame = CGRect(x: 0, y: 0, width: 150, height: 35)
         slider.center = .zero
         slider.minimumTrackTintColor = .lightGray
         slider.maximumTrackTintColor = .lightGray
-        slider.thumbTintColor = .gray
+        slider.thumbTintColor = .systemBlue
         slider.maximumValue = 1.0
         slider.minimumValue = 0.0
         slider.setValue(0.5, animated: true)
@@ -42,7 +53,7 @@ class VerseTableViewController: UITableViewController {
         
         
         let btnVol = UIButton(type: .custom)
-        btnVol.setImage(#imageLiteral(resourceName: "Bible"), for: .normal)
+        btnVol.setImage(#imageLiteral(resourceName: "volume"), for: .normal)
         btnVol.setTitle("", for: .normal)
         btnVol.setTitleColor(btnVol.tintColor, for: .normal)
         
@@ -53,17 +64,19 @@ class VerseTableViewController: UITableViewController {
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         )
         items.append(
-            UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(play))
+            UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(playBtnTapped))
         )
+        items.append(
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        )
+        
         items.append(
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         )
         items.append(
             UIBarButtonItem(customView: btnVol)
         )
-        items.append(
-            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        )
+        
         
         items.append(
             UIBarButtonItem(customView: slider)
@@ -78,15 +91,30 @@ class VerseTableViewController: UITableViewController {
         self.player?.volume = selectedValue
     }
     
-    @objc func play() {
-        
-        let audioDamId = damId != AppConstants.otTextDamId ? AppConstants.ntAudioDamId : AppConstants.otAudioDamId
-        getAudioPath(damId: audioDamId, bookId: selectedVerse!.bookId, selectedVerse!.chapterId)
+    @objc func playBtnTapped() {
+        if player?.isPlaying != nil && player!.isPlaying {
+            setPause()
+            
+        }else {
+            setPlay()
+        }
         
     }
     
-    @objc func addTapped() {
+    @objc func showToolBar() {
         self.navigationController?.setToolbarHidden(false, animated: true)
+        let audioDamId = damId != AppConstants.otTextDamId ? AppConstants.ntAudioDamId : AppConstants.otAudioDamId
+        getAudioPath(damId: audioDamId, bookId: selectedVerse!.bookId, selectedVerse!.chapterId)
+    }
+    
+    private func setPlay() {
+        self.toolbarItems![1] = UIBarButtonItem(barButtonSystemItem: .pause, target: self, action: #selector(playBtnTapped))
+        player?.play()
+    }
+    
+    private func setPause() {
+        self.toolbarItems![1] = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(playBtnTapped))
+        player?.pause()
         
     }
     
@@ -128,12 +156,6 @@ class VerseTableViewController: UITableViewController {
         
     }
     
-    
-    @IBAction func volumeSlider(_ sender: UISlider) {
-    }
-    
-    
-    
     func getVerses() {
         
         DBT .getTextVerse(withDamId: damId, book: selectedVerse?.bookId, chapter: selectedVerse?.chapterId, verseStart: 1 as NSNumber, verseEnd: 200 as NSNumber, success: {(verseList) in
@@ -152,7 +174,7 @@ class VerseTableViewController: UITableViewController {
             (list) in
             self.audio = list as? [DBTAudioPath]
             let url = AppConstants.audioPath.appending(self.audio![0].path)
-            print(url)
+            
             self.playAudio(location: url)
             
         }) { (err) in
@@ -170,9 +192,9 @@ class VerseTableViewController: UITableViewController {
             try session.setCategory(AVAudioSession.Category.playback)
             let soundData = try Data(contentsOf: url)
             self.player = try AVAudioPlayer(data: soundData)
-            self.player?.prepareToPlay()
             self.player?.volume = 0.5
-            self.player?.play()
+            self.player?.prepareToPlay()
+            
             
             
         } catch {

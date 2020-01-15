@@ -36,5 +36,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9B246D4F-AE8E-4712-B41E-73E68B93A416"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Life_in_Bible/VerseTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "playAudio(location:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9B246D4F-AE8E-4712-B41E-73E68B93A416 - b4833de01b22a09d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_in_Bible.VerseTableViewController.(playAudio in _8E62231138689A6572D4CF81426C86F0)(location: Swift.String) -&gt; ()"
+                  moduleName = "Life_in_Bible"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bhavya/Documents/Life_in_Bible/Life_in_Bible/VerseTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
+                  offsetFromSymbolStart = "1485">
+               </Location>
+               <Location
+                  uuid = "9B246D4F-AE8E-4712-B41E-73E68B93A416 - b4833de01b22a09d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_in_Bible.VerseTableViewController.(playAudio in _8E62231138689A6572D4CF81426C86F0)(location: Swift.String) -&gt; ()"
+                  moduleName = "Life_in_Bible"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bhavya/Documents/Life_in_Bible/Life_in_Bible/VerseTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
+                  offsetFromSymbolStart = "1751">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
