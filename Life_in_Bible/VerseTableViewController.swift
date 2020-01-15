@@ -28,14 +28,25 @@ class VerseTableViewController: UITableViewController {
         
         let audioDamId = damId != AppConstants.otTextDamId ? AppConstants.ntAudioDamId : AppConstants.otAudioDamId
         
-//        let button: UIButton = UIButton(type: UIButton.ButtonType.custom) as! UIButton
-//       button.frame = CGRect(x: 10, y: 15, width: 50, height: 50)
-//        button.setImage(UIImage(named: "music.note.list"), for: .normal)
-//        button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
-//       let barButton = UIBarButtonItem(customView: button)
-        
-//        navigationItem.rightBarButtonItem = barButton
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        let slider = UISlider()
+        slider.frame = CGRect(x: 0, y: 0, width: 150, height: 35)
+        slider.center = .zero
+        slider.minimumTrackTintColor = .lightGray
+        slider.maximumTrackTintColor = .lightGray
+        slider.thumbTintColor = .gray
+        slider.maximumValue = 1.0
+        slider.minimumValue = 0.0
+        slider.setValue(0.5, animated: true)
+        slider.addTarget(self, action: #selector(changeVolume(_:)), for: .valueChanged)
+        
+        
+        let btnVol = UIButton(type: .custom)
+        btnVol.setImage(#imageLiteral(resourceName: "Bible"), for: .normal)
+        btnVol.setTitle("", for: .normal)
+        btnVol.setTitleColor(btnVol.tintColor, for: .normal)
+        
+        
         
         var items = [UIBarButtonItem]()
         items.append(
@@ -44,10 +55,27 @@ class VerseTableViewController: UITableViewController {
         items.append(
             UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(play))
         )
+        items.append(
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        )
+        items.append(
+            UIBarButtonItem(customView: btnVol)
+        )
+        items.append(
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        )
+        
+        items.append(
+            UIBarButtonItem(customView: slider)
+        )
         
         self.toolbarItems = items
-        self.navigationController?.setToolbarHidden(true, animated: false)
-        
+        self.navigationController?.isToolbarHidden = true
+    }
+    
+    @objc func changeVolume(_ sender: UISlider){
+        let selectedValue = Float((sender).value)
+        self.player?.volume = selectedValue
     }
     
     @objc func play() {
@@ -64,10 +92,11 @@ class VerseTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.tableView.reloadData()
         let verseId = selectedVerse!.verseId
         let verseIndex:Int? = (verseId != nil) ? Int(verseId!) : nil
         let index: Int = verseIndex! > 0 ? verseIndex! - 1 : 0
-        self.tableView.reloadData()
+        
         let indexPath = IndexPath(row: index, section: 0)
         self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)
         
@@ -142,6 +171,7 @@ class VerseTableViewController: UITableViewController {
             let soundData = try Data(contentsOf: url)
             self.player = try AVAudioPlayer(data: soundData)
             self.player?.prepareToPlay()
+            self.player?.volume = 0.5
             self.player?.play()
             
             
