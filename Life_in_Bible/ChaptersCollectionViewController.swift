@@ -9,7 +9,6 @@
 import UIKit
 import dbt_sdk
 
-
 class ChaptersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var chapterList: [DBTChapter] = []
@@ -25,8 +24,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
     
     var collectionViewHeight: CGFloat = 7 * 85
     
-    
-    
     let verseCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -38,11 +35,9 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         return cv
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         getChapters()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,7 +53,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         
         return chapterList.count
         
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -69,11 +63,7 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ChapterCollectionViewCell
         
         cell.chapterButton.tag = indexPath.row
@@ -92,7 +82,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         
     }
     
-    
     @objc func buttonTapped(_ sender: CustomButton)
     {
         
@@ -106,14 +95,12 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onClickTransperentView))
         transparentView.addGestureRecognizer(tapGesture)
         
-        
         getVerseText(damId: selectedChapter.damId, bookId: selectedChapter.bookId, NumberFormatter().number(from: selectedChapter.chapterId)!, completion: { [weak self] (list) in
             
             self?.verseCollectionViewDataSource = VerseCollectionViewDataSource(list)
             self?.verseCollectionViewDataSource?.verseDelegate = self
             self?.verseCollectionView.delegate = self?.verseCollectionViewDataSource
             self?.verseCollectionView.dataSource = self?.verseCollectionViewDataSource
-            
             
             var count = ceil(Double(list.count ) / 5.0)
             count = count >= 7.0 ? 7.0 : count
@@ -125,7 +112,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
             self!.verseCollectionView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self!.collectionViewHeight)
             window?.addSubview(self!.verseCollectionView)
             
-            
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0,
                            initialSpringVelocity: 1.0, options: .curveEaseInOut,
                            animations: {
@@ -134,7 +120,6 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
             }, completion: nil)
             
         })
-        
         
     }
     
@@ -177,10 +162,7 @@ class ChaptersCollectionViewController: UICollectionViewController, UICollection
                 print(err as Any)
             })
         }
-        
     }
-    
-    
 }
 
 extension ChaptersCollectionViewController: VerseCollectionViewDelegate {
@@ -199,11 +181,7 @@ extension ChaptersCollectionViewController: VerseCollectionViewDelegate {
             verseViewController.selectedVerse = selectedVerse
             verseViewController.damId = self.damId
         }
-        
-        
         navigationController?.pushViewController(verseCV, animated: true)
         
     }
-    
-    
 }

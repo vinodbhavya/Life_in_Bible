@@ -36,7 +36,6 @@ class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayou
         return CGSize(width: collectionView.frame.width, height: 90)
     }
     
-    
     //Header Cell
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if (kind == UICollectionView.elementKindSectionHeader) {
@@ -54,7 +53,6 @@ class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayou
         fatalError()
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VerseCell", for: indexPath) as? VerseCollectionViewCell else {
@@ -65,7 +63,6 @@ class VerseCollectionViewDataSource: NSObject, UICollectionViewDelegateFlowLayou
         let text = self.verseList[indexPath.row].verseId!
         cell.btn.setTitle((text as! String), for: .normal)
         cell.btn.tag = indexPath.row
-        
         return cell
         
     }

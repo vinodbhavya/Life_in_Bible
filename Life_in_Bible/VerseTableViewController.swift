@@ -11,7 +11,6 @@ import dbt_sdk
 import Foundation
 import AVFoundation
 
-
 class VerseTableViewController: UITableViewController {
     
     var verseList: [DBTVerse] = []
@@ -51,13 +50,10 @@ class VerseTableViewController: UITableViewController {
         slider.setValue(0.5, animated: true)
         slider.addTarget(self, action: #selector(changeVolume(_:)), for: .valueChanged)
         
-        
         let btnVol = UIButton(type: .custom)
         btnVol.setImage(#imageLiteral(resourceName: "volume"), for: .normal)
         btnVol.setTitle("", for: .normal)
         btnVol.setTitleColor(btnVol.tintColor, for: .normal)
-        
-        
         
         var items = [UIBarButtonItem]()
         items.append(
@@ -69,15 +65,12 @@ class VerseTableViewController: UITableViewController {
         items.append(
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         )
-        
         items.append(
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         )
         items.append(
             UIBarButtonItem(customView: btnVol)
         )
-        
-        
         items.append(
             UIBarButtonItem(customView: slider)
         )
@@ -94,11 +87,9 @@ class VerseTableViewController: UITableViewController {
     @objc func playBtnTapped() {
         if player?.isPlaying != nil && player!.isPlaying {
             setPause()
-            
         }else {
             setPlay()
         }
-        
     }
     
     @objc func showToolBar() {
@@ -127,7 +118,6 @@ class VerseTableViewController: UITableViewController {
         
         let indexPath = IndexPath(row: index, section: 0)
         self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)
-        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -151,7 +141,6 @@ class VerseTableViewController: UITableViewController {
         cell.btn.layer.cornerRadius = 33.0
         cell.btn.setTitle((text as! String), for: .normal)
         cell.btn.backgroundColor = .gray
-        
         return cell
         
     }
@@ -164,9 +153,7 @@ class VerseTableViewController: UITableViewController {
             self.tableView.reloadData()
         }, failure: {(error) in
             print(error!)
-            
         })
-        
     }
     
     private func getAudioPath( damId: String, bookId: String, _ chapterId: NSNumber) {
@@ -185,9 +172,7 @@ class VerseTableViewController: UITableViewController {
     private func playAudio(location: String){
         
         guard let url = URL(string: location) else { return }
-        
         do {
-            
             let session = AVAudioSession.sharedInstance()
             try session.setCategory(AVAudioSession.Category.playback)
             let soundData = try Data(contentsOf: url)
@@ -195,14 +180,10 @@ class VerseTableViewController: UITableViewController {
             self.player?.volume = 0.5
             self.player?.prepareToPlay()
             
-            
-            
         } catch {
             print(error)
         }
         
     }
-    
-    
     
 }

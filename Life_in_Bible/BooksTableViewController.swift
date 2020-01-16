@@ -17,17 +17,13 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         getBooks()
         tableView.dataSource = self
         searchBar.delegate = self
         
-        
     }
-    
-    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -45,24 +41,20 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
                 fatalError("The dequeued cell is not an instance of BookTableViewCell.")
         }
         
-        
         cell.nameLabel?.text = filterBooks[indexPath.row].bookName
         
         return cell
         
     }
     
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         filterBooks = searchText.isEmpty ? books : books.filter({(book: DBTBook) -> Bool in
             return  book.bookName.range(of: searchText, options: .caseInsensitive) != nil
         })
-      
+        
         tableView.reloadData()
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -74,15 +66,12 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
             return
         }
         
-        
         if let chapterViewController = chapterCV as? ChaptersCollectionViewController {
             chapterViewController.damId = selectedBook!.damId
             chapterViewController.bookId = selectedBook!.bookId
         }
         
-        
         navigationController?.pushViewController(chapterCV, animated: true)
-        
     }
     
     func getBooks()  {
@@ -92,11 +81,9 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate {
             self.filterBooks = self.books
             self.tableView.reloadData()
             
-            
         }, failure: {(error) in
             print(error!)
         })
     }
-    
 }
 
