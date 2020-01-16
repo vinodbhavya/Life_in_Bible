@@ -18,12 +18,15 @@ class VerseTableViewController: UITableViewController {
     var selectedVerse: DBTVerse?
     var player: AVAudioPlayer?
     var audio: [DBTAudioPath]?
-    
+    var audioLocation: String?
+    var showBar = false
     private let reuseIdentifier = "VerseCell"
     
     override func viewDidLoad() {
         getVerses()
         super.viewDidLoad()
+        let audioDamId = damId != AppConstants.otTextDamId ? AppConstants.ntAudioDamId : AppConstants.otAudioDamId
+        getAudioPath(damId: audioDamId, bookId: selectedVerse!.bookId, selectedVerse!.chapterId)
         createNavBar()
         createToolbar()
     }
@@ -65,6 +68,8 @@ class VerseTableViewController: UITableViewController {
         items.append(
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         )
+        items.append(UIBarButtonItem(title: "Restart", style: .plain, target: self, action: #selector(restart)))
+        
         items.append(
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         )
@@ -93,12 +98,22 @@ class VerseTableViewController: UITableViewController {
     }
     
     @objc func showToolBar() {
-        self.navigationController?.setToolbarHidden(false, animated: true)
-        let audioDamId = damId != AppConstants.otTextDamId ? AppConstants.ntAudioDamId : AppConstants.otAudioDamId
-        getAudioPath(damId: audioDamId, bookId: selectedVerse!.bookId, selectedVerse!.chapterId)
+        if showBar {
+            showBar = false
+            self.navigationController?.setToolbarHidden(true, animated: true)
+            
+        }else {
+            showBar = true
+            self.navigationController?.setToolbarHidden(false, animated: true)
+            
+        }
+        self.toolbarItems![1] = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(playBtnTapped))
+        playAudio()
+        
     }
     
     private func setPlay() {
+        
         self.toolbarItems![1] = UIBarButtonItem(barButtonSystemItem: .pause, target: self, action: #selector(playBtnTapped))
         player?.play()
     }
@@ -107,6 +122,11 @@ class VerseTableViewController: UITableViewController {
         self.toolbarItems![1] = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(playBtnTapped))
         player?.pause()
         
+    }
+    
+    @objc func restart() {
+        playAudio()
+        setPlay()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -161,17 +181,15 @@ class VerseTableViewController: UITableViewController {
             (list) in
             self.audio = list as? [DBTAudioPath]
             let url = AppConstants.audioPath.appending(self.audio![0].path)
-            
-            self.playAudio(location: url)
-            
+            self.audioLocation = url
         }) { (err) in
             print(err as Any)
         }
     }
     
-    private func playAudio(location: String){
+    private func playAudio(){
         
-        guard let url = URL(string: location) else { return }
+        guard let url = URL(string: self.audioLocation!) else { return }
         do {
             let session = AVAudioSession.sharedInstance()
             try session.setCategory(AVAudioSession.Category.playback)

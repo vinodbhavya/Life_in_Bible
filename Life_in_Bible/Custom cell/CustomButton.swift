@@ -11,9 +11,6 @@ import UIKit
 @IBDesignable
 class CustomButton: UIButton {
     
-    
-//    @IBInspectable
-//    var barColor: UIColor = UIColor.systemBlue
     @IBInspectable
     var fillColor: UIColor = UIColor.init(red: 232/255, green: 233/255, blue: 237/255, alpha: 1)
     
