@@ -173,13 +173,21 @@ extension ChaptersCollectionViewController: VerseCollectionViewDelegate {
         self.verseCollectionView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.collectionViewHeight)
         
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
         guard let verseCV = mainStoryBoard.instantiateViewController(identifier: "VerseTableViewController") as? VerseTableViewController else {
             return
         }
         
-        if let verseViewController = verseCV as? VerseTableViewController {
-            verseViewController.selectedVerse = selectedVerse
-            verseViewController.damId = self.damId
+        guard let damId = self.damId else {
+            return
+        }
+        
+        if  selectedVerse != nil {
+             if let verseViewController = verseCV as? VerseTableViewController {
+                
+                verseViewController.selectedVerse = selectedVerse
+                verseViewController.damId = damId
+            }
         }
         navigationController?.pushViewController(verseCV, animated: true)
         
