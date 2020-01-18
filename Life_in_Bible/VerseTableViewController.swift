@@ -155,7 +155,6 @@ class VerseTableViewController: UITableViewController {
         
         cell.verseText.text = verseList[indexPath.row].verseText
         let text = self.verseList[indexPath.row].verseId!
-        cell.btn.frame = CGRect(x: 10, y: 15, width: 65, height: 65)
         cell.btn.setTitleColor(.black, for: .normal)
         cell.btn.layer.masksToBounds = true
         cell.btn.layer.cornerRadius = 33.0

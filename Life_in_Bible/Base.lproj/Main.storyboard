@@ -217,23 +217,29 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="And God said, “Let the waters under the heavens be gathered together into one place, and let the dry land appear." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fi-Js-kex">
-                                            <rect key="frame" x="85" y="15" width="319" height="60"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="And God said, “Let the waters under the heavens be gathered together into one place, and let the dry land appear." textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fi-Js-kex">
+                                            <rect key="frame" x="92" y="15" width="312" height="60"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gb-ZT-inb">
-                                            <rect key="frame" x="20" y="30" width="46" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gb-ZT-inb">
+                                            <rect key="frame" x="20" y="21" width="65" height="54"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="65" id="56T-By-Fhe"/>
+                                                <constraint firstAttribute="height" constant="65" id="9kB-fk-ol3"/>
+                                            </constraints>
                                             <state key="normal" title="Button"/>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="4Fi-Js-kex" secondAttribute="trailing" constant="10" id="47R-4r-D0d"/>
-                                        <constraint firstItem="4Fi-Js-kex" firstAttribute="leading" secondItem="8EF-wK-zQQ" secondAttribute="leading" constant="85" id="JTw-i5-mXp"/>
+                                        <constraint firstItem="9gb-ZT-inb" firstAttribute="leading" secondItem="8EF-wK-zQQ" secondAttribute="leading" constant="20" id="AYJ-IJ-4sN"/>
+                                        <constraint firstItem="4Fi-Js-kex" firstAttribute="leading" secondItem="9gb-ZT-inb" secondAttribute="trailing" constant="7" id="Ahs-QO-dWw"/>
+                                        <constraint firstItem="9gb-ZT-inb" firstAttribute="top" secondItem="8EF-wK-zQQ" secondAttribute="topMargin" constant="10" id="Oh9-Qx-6gX"/>
                                         <constraint firstItem="4Fi-Js-kex" firstAttribute="top" secondItem="8EF-wK-zQQ" secondAttribute="top" constant="15" id="SVJ-kR-qEZ"/>
-                                        <constraint firstAttribute="bottom" secondItem="4Fi-Js-kex" secondAttribute="bottom" constant="15" id="nbt-qb-UYn"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9gb-ZT-inb" secondAttribute="bottom" constant="15" id="fIs-mm-kCj"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4Fi-Js-kex" secondAttribute="bottom" constant="15" id="nbt-qb-UYn"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
