@@ -152,6 +152,9 @@ class VerseTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? VerseTableViewCell else {
             fatalError("The dequeued cell is not an instance of VerseTableViewCell.")
         }
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = .lightGray
+        cell.selectedBackgroundView = bgColorView
         
         cell.verseText.text = verseList[indexPath.row].verseText
         let text = self.verseList[indexPath.row].verseId!
@@ -159,7 +162,7 @@ class VerseTableViewController: UITableViewController {
         cell.btn.layer.masksToBounds = true
         cell.btn.layer.cornerRadius = 33.0
         cell.btn.setTitle((text as! String), for: .normal)
-        cell.btn.backgroundColor = .gray
+        cell.btn.backgroundColor = UIColor.init(red: 232/255, green: 233/255, blue: 237/255, alpha: 1)
         return cell
         
     }

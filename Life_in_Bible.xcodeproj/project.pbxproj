@@ -31,6 +31,7 @@
 		A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */; };
 		DB246D607D70CB58CA2B3234 /* Pods_Life_in_Bible_Life_in_BibleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4EAA7701907B970FD7724C /* Pods_Life_in_Bible_Life_in_BibleUITests.framework */; };
 		EA22917623B79C0600097458 /* VerseCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22917523B79C0600097458 /* VerseCollectionViewDataSource.swift */; };
+		EA4DC97123D353DA00878371 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4DC97023D353DA00878371 /* Reachability.swift */; };
 		EA4F169923CA3561006F7CD4 /* HVerseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4F169823CA3561006F7CD4 /* HVerseCollectionReusableView.swift */; };
 		EA4F169B23CA4D0C006F7CD4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4F169A23CA4D0B006F7CD4 /* AVFoundation.framework */; };
 		EA4F169D23CA4EBF006F7CD4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4F169C23CA4EBF006F7CD4 /* AppConstants.swift */; };
@@ -91,6 +92,7 @@
 		A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxViewController.swift; sourceTree = "<group>"; };
 		E38FF65232D10CB68BBE4C75 /* Pods_Life_in_Bible.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Life_in_Bible.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA22917523B79C0600097458 /* VerseCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		EA4DC97023D353DA00878371 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EA4F169823CA3561006F7CD4 /* HVerseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HVerseCollectionReusableView.swift; sourceTree = "<group>"; };
 		EA4F169A23CA4D0B006F7CD4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EA4F169C23CA4EBF006F7CD4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		7A9CDAED23746292003D4FDF /* Life_in_Bible */ = {
 			isa = PBXGroup;
 			children = (
+				EA4DC97023D353DA00878371 /* Reachability.swift */,
 				7A9CDAEE23746292003D4FDF /* AppDelegate.swift */,
 				7A9CDAF023746292003D4FDF /* SceneDelegate.swift */,
 				7A15899023BE439C00F5EFF1 /* Churches.json */,
@@ -508,6 +511,7 @@
 				7A9CDAF123746292003D4FDF /* SceneDelegate.swift in Sources */,
 				EA4F169923CA3561006F7CD4 /* HVerseCollectionReusableView.swift in Sources */,
 				A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */,
+				EA4DC97123D353DA00878371 /* Reachability.swift in Sources */,
 				A00F8C2B237DAA9F0097C968 /* BooksTableViewController.swift in Sources */,
 				EA22917623B79C0600097458 /* VerseCollectionViewDataSource.swift in Sources */,
 				7A15899323BE43F900F5EFF1 /* SwiftyJSON.swift in Sources */,
