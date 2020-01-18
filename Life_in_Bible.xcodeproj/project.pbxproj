@@ -12,6 +12,8 @@
 		7A15898F23BE429900F5EFF1 /* Church.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A15898E23BE429900F5EFF1 /* Church.swift */; };
 		7A15899123BE439C00F5EFF1 /* Churches.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A15899023BE439C00F5EFF1 /* Churches.json */; };
 		7A15899323BE43F900F5EFF1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A15899223BE43F900F5EFF1 /* SwiftyJSON.swift */; };
+		7A1F3BFD23D32B4A00420645 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1F3BFC23D32B4A00420645 /* MenuViewController.swift */; };
+		7A1F3BFF23D3312F00420645 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1F3BFE23D3312F00420645 /* NoteViewController.swift */; };
 		7A9CDAEF23746292003D4FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CDAEE23746292003D4FDF /* AppDelegate.swift */; };
 		7A9CDAF123746292003D4FDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CDAF023746292003D4FDF /* SceneDelegate.swift */; };
 		7A9CDAF623746292003D4FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CDAF423746292003D4FDF /* Main.storyboard */; };
@@ -31,7 +33,6 @@
 		A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */; };
 		DB246D607D70CB58CA2B3234 /* Pods_Life_in_Bible_Life_in_BibleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4EAA7701907B970FD7724C /* Pods_Life_in_Bible_Life_in_BibleUITests.framework */; };
 		EA22917623B79C0600097458 /* VerseCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22917523B79C0600097458 /* VerseCollectionViewDataSource.swift */; };
-		EA4DC97123D353DA00878371 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4DC97023D353DA00878371 /* Reachability.swift */; };
 		EA4F169923CA3561006F7CD4 /* HVerseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4F169823CA3561006F7CD4 /* HVerseCollectionReusableView.swift */; };
 		EA4F169B23CA4D0C006F7CD4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4F169A23CA4D0B006F7CD4 /* AVFoundation.framework */; };
 		EA4F169D23CA4EBF006F7CD4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4F169C23CA4EBF006F7CD4 /* AppConstants.swift */; };
@@ -66,6 +67,8 @@
 		7A15898E23BE429900F5EFF1 /* Church.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Church.swift; sourceTree = "<group>"; };
 		7A15899023BE439C00F5EFF1 /* Churches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Churches.json; sourceTree = "<group>"; };
 		7A15899223BE43F900F5EFF1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		7A1F3BFC23D32B4A00420645 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		7A1F3BFE23D3312F00420645 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		7A9CDAEB23746292003D4FDF /* Life_in_Bible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Life_in_Bible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9CDAEE23746292003D4FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A9CDAF023746292003D4FDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,7 +95,6 @@
 		A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxViewController.swift; sourceTree = "<group>"; };
 		E38FF65232D10CB68BBE4C75 /* Pods_Life_in_Bible.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Life_in_Bible.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA22917523B79C0600097458 /* VerseCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCollectionViewDataSource.swift; sourceTree = "<group>"; };
-		EA4DC97023D353DA00878371 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EA4F169823CA3561006F7CD4 /* HVerseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HVerseCollectionReusableView.swift; sourceTree = "<group>"; };
 		EA4F169A23CA4D0B006F7CD4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EA4F169C23CA4EBF006F7CD4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -171,7 +173,6 @@
 		7A9CDAED23746292003D4FDF /* Life_in_Bible */ = {
 			isa = PBXGroup;
 			children = (
-				EA4DC97023D353DA00878371 /* Reachability.swift */,
 				7A9CDAEE23746292003D4FDF /* AppDelegate.swift */,
 				7A9CDAF023746292003D4FDF /* SceneDelegate.swift */,
 				7A15899023BE439C00F5EFF1 /* Churches.json */,
@@ -252,6 +253,8 @@
 				EA22917523B79C0600097458 /* VerseCollectionViewDataSource.swift */,
 				A0D62037237B1CC800F67BBB /* MapBoxViewController.swift */,
 				EA51EE8C23A6854500D11E65 /* VerseTableViewController.swift */,
+				7A1F3BFC23D32B4A00420645 /* MenuViewController.swift */,
+				7A1F3BFE23D3312F00420645 /* NoteViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -507,11 +510,12 @@
 				EA51EE8B23A6838500D11E65 /* VerseTableViewCell.swift in Sources */,
 				EA51EE8D23A6854500D11E65 /* VerseTableViewController.swift in Sources */,
 				A00F8C29237DA9BD0097C968 /* Verses.swift in Sources */,
+				7A1F3BFD23D32B4A00420645 /* MenuViewController.swift in Sources */,
 				7A9CDAEF23746292003D4FDF /* AppDelegate.swift in Sources */,
 				7A9CDAF123746292003D4FDF /* SceneDelegate.swift in Sources */,
 				EA4F169923CA3561006F7CD4 /* HVerseCollectionReusableView.swift in Sources */,
+				7A1F3BFF23D3312F00420645 /* NoteViewController.swift in Sources */,
 				A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */,
-				EA4DC97123D353DA00878371 /* Reachability.swift in Sources */,
 				A00F8C2B237DAA9F0097C968 /* BooksTableViewController.swift in Sources */,
 				EA22917623B79C0600097458 /* VerseCollectionViewDataSource.swift in Sources */,
 				7A15899323BE43F900F5EFF1 /* SwiftyJSON.swift in Sources */,

@@ -16,11 +16,8 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if !Reachability.isConnectedToNetwork() {
-            self.alert(message: "No Internet Connection", title: "Network")
-        }
         if(segue.identifier == "OldTestamentSegue") {
-           if let viewcontroller = segue.destination as? BooksTableViewController {
+            if let viewcontroller = segue.destination as? BooksTableViewController {
                 viewcontroller.damId = AppConstants.otTextDamId
                 
             }
@@ -32,27 +29,4 @@ class ViewController: UIViewController {
         
     }
     
-    
-   func alert(message: String, title: String = "") {
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        
-        alertController.addAction(UIAlertAction(title: "Settings", style: .default, handler: { action in
-            switch action.style {
-            case .default:
-                self.openSettings()
-            case .cancel:
-                print("cancel")
-            case .destructive:
-                print("destructive")
-            @unknown default:
-                self.openSettings()
-            }}
-        ))
-        present(alertController, animated: true, completion: nil)
-    }
-    
-   func openSettings() {
-        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, completionHandler: nil)
-    }
 }
