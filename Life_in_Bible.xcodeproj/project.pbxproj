@@ -39,6 +39,7 @@
 		EA51EE8B23A6838500D11E65 /* VerseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51EE8A23A6838500D11E65 /* VerseTableViewCell.swift */; };
 		EA51EE8D23A6854500D11E65 /* VerseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51EE8C23A6854500D11E65 /* VerseTableViewController.swift */; };
 		EA7216D923B16B9900C24BCF /* VerseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7216D823B16B9900C24BCF /* VerseCollectionViewCell.swift */; };
+		EACF2FFA23D60BEB00B58F4F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF2FF923D60BEB00B58F4F /* Reachability.swift */; };
 		EAE1733A23A127B200409AB5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE1733923A127B200409AB5 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		EA51EE8A23A6838500D11E65 /* VerseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseTableViewCell.swift; sourceTree = "<group>"; };
 		EA51EE8C23A6854500D11E65 /* VerseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseTableViewController.swift; sourceTree = "<group>"; };
 		EA7216D823B16B9900C24BCF /* VerseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCollectionViewCell.swift; sourceTree = "<group>"; };
+		EACF2FF923D60BEB00B58F4F /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EAE1733923A127B200409AB5 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		EC5A7172E579723429117F48 /* Pods-Life_in_BibleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life_in_BibleTests.release.xcconfig"; path = "Target Support Files/Pods-Life_in_BibleTests/Pods-Life_in_BibleTests.release.xcconfig"; sourceTree = "<group>"; };
 		F633D30D5038BEA1DCD222B2 /* Pods_Life_in_BibleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Life_in_BibleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 				7A15899023BE439C00F5EFF1 /* Churches.json */,
 				7A15899223BE43F900F5EFF1 /* SwiftyJSON.swift */,
 				EA4F169C23CA4EBF006F7CD4 /* AppConstants.swift */,
+				EACF2FF923D60BEB00B58F4F /* Reachability.swift */,
 				A05BFF19238F39960050C59D /* Custom cell */,
 				A00F8C23237DA8110097C968 /* Model */,
 				A0D62036237B1C6700F67BBB /* Controllers */,
@@ -515,6 +518,7 @@
 				7A9CDAF123746292003D4FDF /* SceneDelegate.swift in Sources */,
 				EA4F169923CA3561006F7CD4 /* HVerseCollectionReusableView.swift in Sources */,
 				7A1F3BFF23D3312F00420645 /* NoteViewController.swift in Sources */,
+				EACF2FFA23D60BEB00B58F4F /* Reachability.swift in Sources */,
 				A0D62038237B1CC800F67BBB /* MapBoxViewController.swift in Sources */,
 				A00F8C2B237DAA9F0097C968 /* BooksTableViewController.swift in Sources */,
 				EA22917623B79C0600097458 /* VerseCollectionViewDataSource.swift in Sources */,
